@@ -98,10 +98,24 @@
 }
 
 /* ================================================================
-   CUSTOM FONTS — place font files in /assets/fonts/ to activate
-   Google Fonts (Cormorant Garamond, Playfair Display, DM Sans)
-   serve as fallbacks in the meantime.
+   CUSTOM FONTS
    ================================================================ */
+
+@font-face {
+  font-family: 'Tan Mon Cheri';
+  src: url('/assets/fonts/TanMonCheri.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tan Mon Cheri';
+  src: url('/assets/fonts/TanMonCheri.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 
 @font-face {
@@ -272,15 +286,11 @@
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.875rem;
     letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.85);
+    color: #5C3A28;
     text-decoration: none;
     position: relative;
     transition: color 0.2s;
     white-space: nowrap;
-  }
-
-  #navbar.scrolled .nav-link {
-    color: #5C3A28;
   }
 
   .nav-link::after {
@@ -296,11 +306,6 @@
 
   .nav-link:hover,
   .nav-link.active {
-    color: white;
-  }
-
-  #navbar.scrolled .nav-link:hover,
-  #navbar.scrolled .nav-link.active {
     color: #A05C3B;
   }
 
@@ -316,27 +321,17 @@
     font-size: 0.8rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: var(--brand-purple);
-    background-color: white;
-    border: 1px solid white;
+    color: #A05C3B;
+    border: 1px solid #A05C3B;
     padding: 0.5rem 1.375rem;
     border-radius: 0.875rem;
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, color 0.2s;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
   .nav-cta:hover {
-    background-color: rgba(255, 255, 255, 0.85);
-  }
-
-  #navbar.scrolled .nav-cta {
-    color: #A05C3B;
-    border-color: #A05C3B;
-  }
-
-  #navbar.scrolled .nav-cta:hover {
     background-color: #A05C3B;
     color: white;
   }
@@ -356,13 +351,9 @@
     display: block;
     width: 22px;
     height: 1.5px;
-    background-color: white;
-    transform-origin: center;
-    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.2s ease;
-  }
-
-  #navbar.scrolled .nav-hamburger span {
     background-color: #5C3A28;
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
   .nav-hamburger.open span:nth-child(1) {
@@ -434,152 +425,173 @@
 }
 
 /* ================================================================
-   HERO
+   HERO — shared tokens
    ================================================================ */
 @layer components {
-  .hero-section {
-    position: relative;
-    width: 100%;
+
+  /* Shared elements across all 3 proposals */
+  .ha-name {
+    font-family: 'Tan Mon Cheri', Georgia, serif;
+    font-size: clamp(1.125rem, 2.5vw, 1.625rem);
+    font-weight: 400;
+    color: #5C3A28;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+  }
+
+  .ha-role {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #A05C3B;
+    margin-top: 0.25rem;
+  }
+
+  .ha-opening {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    opacity: 0.65;
+  }
+
+  .hp-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    border: 1px solid #A05C3B;
+    border-radius: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.25s, color 0.25s;
+  }
+
+  .hp-cta:hover {
+    background-color: #A05C3B;
+    color: white;
+  }
+
+  /* ── Proposal A: centered stack */
+  .hero-a {
     min-height: 100vh;
+    background-color: #EAE8E5;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('/assets/images/toothbrush.jpg');
-    background-size: cover;
-    background-position: center 40%;
-    will-change: transform;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      150deg,
-      rgba(92, 58, 40, 0.72) 0%,
-      rgba(92, 58, 40, 0.62) 40%,
-      rgba(160, 92, 59, 0.55) 100%
-    );
-  }
-
-  /* Subtle grain texture */
-  .hero-overlay::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding: 2rem;
-    gap: 2.25rem;
-    max-width: 700px;
+    padding: 8rem 2rem 4rem;
+    gap: 2.5rem;
   }
 
-  .hero-opening-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 1.375rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 0.875rem;
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-  }
-
-  .hero-opening-badge .badge-sep {
-    width: 1px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.25);
-    display: inline-block;
-  }
-
-  .hero-logo {
-    width: min(400px, 78vw);
+  .ha-logo {
+    width: min(480px, 82vw);
     height: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.95;
   }
 
-  .hero-tagline {
-    font-family: 'The Seasons', 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.125rem, 2.5vw, 1.4375rem);
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.88);
-    line-height: 1.65;
-    max-width: 500px;
-  }
-
-  .btn-hero {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    padding: 0.9375rem 2.5rem;
-    background: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 0.875rem;
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    text-decoration: none;
-    backdrop-filter: blur(4px);
-    transition: background-color 0.4s, border-color 0.4s;
-  }
-
-  .btn-hero:hover {
-    background-color: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.8);
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2.25rem;
-    left: 50%;
-    transform: translateX(-50%);
+  .ha-identity {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-    color: white;
-    opacity: 0.7;
-    z-index: 2;
-    animation: scrollBounce 2.2s ease-in-out infinite;
+    gap: 0.375rem;
   }
 
-  .scroll-text {
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.625rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+  /* ── Proposal B: logo top / identity bottom split by a rule */
+  .hero-b {
+    min-height: 100vh;
+    background-color: #EAE8E5;
+    display: flex;
+    flex-direction: column;
+    padding: 7rem 4rem 4rem;
   }
 
-  .scroll-arrow {
-    width: 18px;
-    height: 18px;
+  .hb-top {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  @keyframes scrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
-    50%       { transform: translateX(-50%) translateY(7px); opacity: 0.9; }
+  .hb-logo {
+    width: min(440px, 78vw);
+    height: auto;
+  }
+
+  .hb-rule {
+    width: 100%;
+    height: 1px;
+    background-color: #D9D5CF;
+    margin: 2rem 0;
+  }
+
+  .hb-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+  }
+
+  .hb-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    text-align: right;
+  }
+
+  /* ── Proposal C: logo left / identity right */
+  .hero-c {
+    min-height: 100vh;
+    background-color: #EAE8E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 4rem 4rem;
+  }
+
+  .hc-inner {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 960px;
+  }
+
+  .hc-logo {
+    width: min(340px, 45vw);
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .hc-divider {
+    width: 1px;
+    height: 180px;
+    background-color: #D9D5CF;
+    flex-shrink: 0;
+  }
+
+  .hc-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .hb-bottom { flex-direction: column; align-items: flex-start; }
+    .hb-right  { align-items: flex-start; text-align: left; }
+    .hero-b    { padding: 7rem 2rem 3rem; }
+    .hc-inner  { flex-direction: column; gap: 2.5rem; text-align: center; }
+    .hc-divider { width: 60px; height: 1px; }
+    .hc-right  { align-items: center; }
+    .hero-c    { padding: 7rem 2rem 3rem; }
   }
 }
 
@@ -1339,10 +1351,30 @@
    ================================================================ */
 @layer components {
   .footer-section {
+    position: relative;
     background-color: #5C3A28;
+    background-image: url('/assets/images/toothbrush.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    isolation: isolate;
+  }
+
+  .footer-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      150deg,
+      rgba(92, 58, 40, 0.92) 0%,
+      rgba(92, 58, 40, 0.84) 40%,
+      rgba(160, 92, 59, 0.78) 100%
+    );
   }
 
   .footer-inner {
+    position: relative;
+    z-index: 1;
     max-width: 640px;
     margin: 0 auto;
     padding: 5.5rem 2rem;
