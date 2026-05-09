@@ -39,10 +39,15 @@
       "Bash(git status *)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(cp \"C:\\\\Users\\\\user\\\\Téléchargements\\\\tan-mon-cheri-regular.otf\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\fonts\\\\TanMonCheri.otf\" && echo \"Copied\")",
+      "Bash(cp \"C:/Users/user/Downloads/TAN-MON CHERI-Regular.otf\" \"C:/Users/user/OneDrive/Projet/parenthese-hygieniste/parenthese-hygieniste/public/assets/fonts/TanMonCheri.otf\" && echo \"Copied\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/fonts/TanMonCheri.otf)"
     ],
     "additionalDirectories": [
-      "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets"
+      "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets",
+      "C:\\Users\\user\\Téléchargements",
+      "C:\\Users\\user\\Downloads"
     ]
   }
 }
