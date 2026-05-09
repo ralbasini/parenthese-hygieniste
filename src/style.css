@@ -443,7 +443,7 @@
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.9rem;
     font-style: italic;
-    color: #A05C3B;
+    color: var(--brand-purple);
     margin-top: 0.25rem;
   }
 
@@ -479,6 +479,8 @@
   /* ── Proposal A: centered stack */
   .hero-a {
     min-height: 100vh;
+    overflow: hidden;
+    position: relative;
     background-color: #EAE8E5;
     display: flex;
     flex-direction: column;
@@ -504,6 +506,8 @@
   /* ── Proposal B: logo top / identity bottom split by a rule */
   .hero-b {
     min-height: 100vh;
+    overflow: hidden;
+    position: relative;
     background-color: #EAE8E5;
     display: flex;
     flex-direction: column;
@@ -549,6 +553,8 @@
   /* ── Proposal C: logo left / identity right */
   .hero-c {
     min-height: 100vh;
+    overflow: hidden;
+    position: relative;
     background-color: #EAE8E5;
     display: flex;
     flex-direction: column;
@@ -563,10 +569,12 @@
     gap: 4rem;
     width: 100%;
     max-width: 960px;
+    position: relative;
+    z-index: 1;
   }
 
   .hc-logo {
-    width: min(340px, 45vw);
+    width: min(480px, 52vw);
     height: auto;
     flex-shrink: 0;
   }
@@ -584,6 +592,12 @@
     gap: 1.25rem;
   }
 
+  .hc-right .hp-cta {
+    font-size: 0.7rem;
+    padding: 0.5rem 1.25rem;
+    align-self: flex-start;
+  }
+
   @media (max-width: 640px) {
     .hb-bottom { flex-direction: column; align-items: flex-start; }
     .hb-right  { align-items: flex-start; text-align: left; }
@@ -599,9 +613,52 @@
    SECTION LAYOUT HELPERS
    ================================================================ */
 @layer components {
-  .section-cream { background-color: #EAE8E5; }
-  .section-white { background-color: #FFFFFF; }
-  .section-beige { background-color: #D9D5CF; }
+  .section-cream { background-color: #EAE8E5; position: relative; }
+  .section-white { background-color: #FFFFFF; position: relative; }
+  .section-beige { background-color: #D9D5CF; position: relative; }
+
+  .scribble {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #A05C3B;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .scribble svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .scribble-top    { top: -80px; }
+  .scribble-mid    { top: 30%; }
+  .scribble-bot    { bottom: -240px; }
+  .scribble-center { top: 50%; transform: translateY(-50%); }
+
+  .scribble-fill {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    color: #A05C3B;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .scribble-fill svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .section-inner {
+    position: relative;
+    z-index: 1;
+  }
 
   .section-inner {
     max-width: 1100px;
@@ -877,6 +934,8 @@
     text-transform: uppercase;
     border-radius: 0.5rem;
     margin-bottom: 1.75rem;
+    position: relative;
+    z-index: 1;
   }
 
   /* ── Option A — 3 columns, generous padding */
@@ -1352,6 +1411,7 @@
 @layer components {
   .footer-section {
     position: relative;
+    overflow: hidden;
     background-color: #5C3A28;
     background-image: url('/assets/images/toothbrush.jpg');
     background-size: cover;
