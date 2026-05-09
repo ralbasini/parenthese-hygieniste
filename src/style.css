@@ -1,4 +1,105 @@
 /* ================================================================
+   ACCESS GATE
+   ================================================================ */
+
+#access-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: #F8F3EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#access-gate.unlocked {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gate-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+}
+
+.gate-logo {
+  width: min(320px, 72vw);
+  height: auto;
+}
+
+.gate-tagline {
+  font-family: 'The Seasons', 'Playfair Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #A05C3B;
+  opacity: 0.8;
+  margin-top: -0.5rem;
+}
+
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.gate-label {
+  font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-purple);
+}
+
+#gate-input {
+  width: 10rem;
+  text-align: center;
+  font-family: 'The Seasons', 'Playfair Display', serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.5em;
+  padding: 0.625rem 0.75rem 0.625rem 1.25em;
+  color: #5C3A28;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #EDE4D8;
+  outline: none;
+  transition: border-color 0.3s;
+  -webkit-text-security: disc;
+}
+
+#gate-input:focus {
+  border-bottom-color: var(--brand-purple);
+}
+
+#gate-input::placeholder {
+  color: #EDE4D8;
+  letter-spacing: 0.35em;
+  -webkit-text-security: none;
+}
+
+.gate-error {
+  font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+  font-size: 0.8125rem;
+  color: #A05C3B;
+  min-height: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gate-error.visible {
+  opacity: 1;
+}
+
+/* ================================================================
    CUSTOM FONTS — place font files in /assets/fonts/ to activate
    Google Fonts (Cormorant Garamond, Playfair Display, DM Sans)
    serve as fallbacks in the meantime.
@@ -66,6 +167,11 @@
    BASE
    ================================================================ */
 @layer base {
+  :root {
+    --brand-purple: #8B7EC8;
+    --brand-purple-light: rgba(139, 126, 200, 0.15);
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -96,8 +202,8 @@
   .fade-in {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .fade-in.visible {
@@ -124,7 +230,7 @@
     left: 0;
     right: 0;
     z-index: 50;
-    transition: background 0.5s ease, box-shadow 0.5s ease;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
   }
 
   #navbar.scrolled {
@@ -174,11 +280,15 @@
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.875rem;
     letter-spacing: 0.04em;
-    color: #5C3A28;
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     position: relative;
-    transition: color 0.3s;
+    transition: color 0.2s;
     white-space: nowrap;
+  }
+
+  #navbar.scrolled .nav-link {
+    color: #5C3A28;
   }
 
   .nav-link::after {
@@ -188,12 +298,17 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #A05C3B;
+    background-color: var(--brand-purple);
     transition: width 0.35s ease;
   }
 
   .nav-link:hover,
   .nav-link.active {
+    color: white;
+  }
+
+  #navbar.scrolled .nav-link:hover,
+  #navbar.scrolled .nav-link.active {
     color: #A05C3B;
   }
 
@@ -209,17 +324,27 @@
     font-size: 0.8rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: #A05C3B;
-    border: 1px solid #A05C3B;
+    color: var(--brand-purple);
+    background-color: white;
+    border: 1px solid white;
     padding: 0.5rem 1.375rem;
-    border-radius: 100px;
+    border-radius: 0.875rem;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
   .nav-cta:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  #navbar.scrolled .nav-cta {
+    color: #A05C3B;
+    border-color: #A05C3B;
+  }
+
+  #navbar.scrolled .nav-cta:hover {
     background-color: #A05C3B;
     color: white;
   }
@@ -239,9 +364,13 @@
     display: block;
     width: 22px;
     height: 1.5px;
-    background-color: #5C3A28;
+    background-color: white;
     transform-origin: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.2s ease;
+  }
+
+  #navbar.scrolled .nav-hamburger span {
+    background-color: #5C3A28;
   }
 
   .nav-hamburger.open span:nth-child(1) {
@@ -298,7 +427,7 @@
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.875rem;
     letter-spacing: 0.06em;
-    border-radius: 100px;
+    border-radius: 0.875rem;
     text-decoration: none;
     transition: background-color 0.3s;
   }
@@ -372,7 +501,7 @@
     gap: 0.75rem;
     padding: 0.5rem 1.375rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 100px;
+    border-radius: 0.875rem;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
@@ -411,7 +540,7 @@
     background: transparent;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 100px;
+    border-radius: 0.875rem;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.8125rem;
     letter-spacing: 0.09em;
@@ -435,7 +564,8 @@
     flex-direction: column;
     align-items: center;
     gap: 0.4rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--brand-purple);
+    opacity: 0.7;
     z-index: 2;
     animation: scrollBounce 2.2s ease-in-out infinite;
   }
@@ -509,7 +639,8 @@
     font-family: 'Cormorant Garamond', 'Tan Mon Cheri', serif;
     font-size: 5rem;
     line-height: 1;
-    color: #EDE4D8;
+    color: var(--brand-purple);
+    opacity: 0.25;
     text-align: center;
     user-select: none;
     letter-spacing: -0.05em;
@@ -661,7 +792,7 @@
   .timeline-year {
     font-family: 'The Seasons', 'Playfair Display', serif;
     font-size: 0.875rem;
-    color: #A05C3B;
+    color: var(--brand-purple);
     padding-top: 0.1rem;
     white-space: nowrap;
     line-height: 1.5;
@@ -762,7 +893,7 @@
   .protocol-icon {
     width: 2.25rem;
     height: 2.25rem;
-    color: #A05C3B;
+    color: var(--brand-purple);
     flex-shrink: 0;
   }
 
@@ -787,6 +918,41 @@
     line-height: 1.72;
     color: #A05C3B;
     opacity: 0.9;
+    flex: 1;
+  }
+
+  .protocol-rdv {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    border: 1px solid #EDE4D8;
+    border-radius: 0.875rem;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: border-color 0.25s, color 0.25s, background-color 0.25s;
+  }
+
+  .protocol-rdv::after {
+    content: '→';
+    font-size: 0.7rem;
+    transition: transform 0.25s;
+  }
+
+  .protocol-rdv:hover {
+    border-color: #A05C3B;
+    background-color: #A05C3B;
+    color: white;
+  }
+
+  .protocol-rdv:hover::after {
+    transform: translateX(3px);
   }
 }
 
@@ -899,7 +1065,7 @@
     content: '·';
     position: absolute;
     left: 0;
-    color: #A05C3B;
+    color: var(--brand-purple);
     font-weight: 700;
   }
 
@@ -910,7 +1076,7 @@
     padding: 0.9375rem 2.25rem;
     background-color: #A05C3B;
     color: white;
-    border-radius: 100px;
+    border-radius: 0.875rem;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.875rem;
     letter-spacing: 0.06em;

@@ -16,6 +16,34 @@
 <body>
 
   <!-- ══════════════════════════════════════════════════════════════
+       ACCESS GATE
+       ══════════════════════════════════════════════════════════════ -->
+  <div id="access-gate" role="dialog" aria-modal="true" aria-label="Accès au site">
+    <div class="gate-inner">
+      <img src="/assets/images/logo-brun.png"
+           alt="Cabinet Parenthèse Hygiéniste"
+           class="gate-logo">
+
+      <p class="gate-tagline"><em>Site en cours de finalisation</em></p>
+
+      <div class="gate-form">
+        <label for="gate-input" class="gate-label">Code d'accès</label>
+        <input
+          type="password"
+          id="gate-input"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="4"
+          placeholder="· · · ·"
+          autocomplete="off"
+          spellcheck="false"
+        >
+        <p id="gate-error" class="gate-error" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
        NAVIGATION
        ══════════════════════════════════════════════════════════════ -->
   <nav id="navbar" aria-label="Navigation principale">
@@ -279,6 +307,7 @@
           </div>
           <h3 class="protocol-title">Hygiène &amp; Prévention</h3>
           <p class="protocol-desc">Plan d'hygiène personnalisé, élimination des dépôts, intervalle de séance adapté à votre terrain biologique.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
         <!-- 2 — Diagnocam KaVo -->
@@ -294,6 +323,7 @@
           </div>
           <h3 class="protocol-title">Diagnocam KaVo</h3>
           <p class="protocol-desc">Détection de carie sans rayons X par transillumination infrarouge et fluorescence — précis et non-invasif.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
         <!-- 3 — Pédodontie -->
@@ -307,6 +337,7 @@
           </div>
           <h3 class="protocol-title">Pédodontie</h3>
           <p class="protocol-desc">Prise en charge des enfants dans une atmosphère rassurante, à leur rythme, pour une relation positive avec les soins bucco-dentaires.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
         <!-- 4 — Aromathérapie -->
@@ -320,6 +351,7 @@
           </div>
           <h3 class="protocol-title">Aromathérapie</h3>
           <p class="protocol-desc">Huiles essentielles ciblées pour soutenir le système immunitaire, apaiser le stress et accompagner votre équilibre oral.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
         <!-- 5 — Médecine Alternative -->
@@ -334,6 +366,7 @@
           </div>
           <h3 class="protocol-title">Médecine Alternative</h3>
           <p class="protocol-desc">Approche holistique corps, âme et esprit. Plan d'hygiène conscient, adapté à votre vécu, vos émotions et votre équilibre global.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
         <!-- 6 — Acupressure -->
@@ -349,6 +382,7 @@
           </div>
           <h3 class="protocol-title">Acupressure</h3>
           <p class="protocol-desc">Stimulation de points énergétiques pour accompagner l'autorégulation — particulièrement utile contre l'anxiété et les réflexes nauséeux.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
         <!-- 7 — Diagnostic Langue MTC -->
@@ -363,6 +397,7 @@
           </div>
           <h3 class="protocol-title">Diagnostic Langue MTC</h3>
           <p class="protocol-desc">Lecture de la langue comme indicateur de l'état général en lien avec la sphère bucco-dentaire, selon la médecine traditionnelle chinoise.</p>
+          <a href="#contact" class="protocol-rdv">Rendez-vous</a>
         </article>
 
       </div>

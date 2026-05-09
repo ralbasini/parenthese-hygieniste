@@ -35,7 +35,11 @@
       "Bash(curl -s http://localhost:5173/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/logo-brun.png)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/toothbrush.jpg)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/signature.png)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/signature.png)",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets"

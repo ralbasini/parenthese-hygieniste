@@ -8,6 +8,7 @@ export default {
         'brand-brown-dark': '#5C3A28',
         'brand-cream':      '#F8F3EE',
         'brand-beige':      '#EDE4D8',
+        'brand-purple':     '#8B7EC8',
       },
       fontFamily: {
         display: ['"Tan Mon Cheri"', '"Cormorant Garamond"', 'Georgia', 'serif'],
