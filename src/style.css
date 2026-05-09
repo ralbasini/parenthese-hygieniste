@@ -1,0 +1,1120 @@
+/* ================================================================
+   CUSTOM FONTS — place font files in /assets/fonts/ to activate
+   Google Fonts (Cormorant Garamond, Playfair Display, DM Sans)
+   serve as fallbacks in the meantime.
+   ================================================================ */
+
+@font-face {
+  font-family: 'Tan Mon Cheri';
+  src: url('/assets/fonts/TanMonCheri.woff2') format('woff2'),
+       url('/assets/fonts/TanMonCheri.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'The Seasons';
+  src: url('/assets/fonts/TheSeasons.woff2') format('woff2'),
+       url('/assets/fonts/TheSeasons.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'The Seasons';
+  src: url('/assets/fonts/TheSeasons-Italic.woff2') format('woff2'),
+       url('/assets/fonts/TheSeasons-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Chocolates';
+  src: url('/assets/fonts/TTChocolates-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Chocolates';
+  src: url('/assets/fonts/TTChocolates-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Chocolates';
+  src: url('/assets/fonts/TTChocolates-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================================
+   TAILWIND
+   ================================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================================
+   BASE
+   ================================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: 'TT Chocolates', 'DM Sans', system-ui, sans-serif;
+    color: #5C3A28;
+    background-color: #F8F3EE;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+@layer utilities {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .delay-1 { transition-delay: 0.12s; }
+  .delay-2 { transition-delay: 0.22s; }
+  .delay-3 { transition-delay: 0.32s; }
+  .delay-4 { transition-delay: 0.42s; }
+  .delay-5 { transition-delay: 0.52s; }
+  .delay-6 { transition-delay: 0.62s; }
+  .delay-7 { transition-delay: 0.72s; }
+}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+@layer components {
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  #navbar.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(160, 92, 59, 0.12);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav-logo-link {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-link:hover { opacity: 0.7; }
+
+  .nav-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    color: #5C3A28;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #A05C3B;
+    transition: width 0.35s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: #A05C3B;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    border: 1px solid #A05C3B;
+    padding: 0.5rem 1.375rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-cta:hover {
+    background-color: #A05C3B;
+    color: white;
+  }
+
+  /* Hamburger */
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background-color: #5C3A28;
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-hamburger.open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(160, 92, 59, 0.08);
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 1rem 2rem 2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 1rem 0;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #5C3A28;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(160, 92, 59, 0.08);
+    transition: color 0.2s, padding-left 0.2s;
+  }
+
+  .mobile-nav-link:hover {
+    color: #A05C3B;
+    padding-left: 0.5rem;
+  }
+
+  .mobile-nav-cta {
+    display: inline-flex;
+    margin-top: 1.25rem;
+    padding: 0.75rem 2rem;
+    background-color: #A05C3B;
+    color: white;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .mobile-nav-cta:hover {
+    background-color: #5C3A28;
+  }
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+@layer components {
+  .hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/images/toothbrush.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    will-change: transform;
+    transition: transform 12s ease;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      150deg,
+      rgba(92, 58, 40, 0.92) 0%,
+      rgba(92, 58, 40, 0.84) 40%,
+      rgba(160, 92, 59, 0.78) 100%
+    );
+  }
+
+  /* Subtle grain texture */
+  .hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    gap: 2.25rem;
+    max-width: 700px;
+  }
+
+  .hero-opening-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1.375rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+  }
+
+  .hero-opening-badge .badge-sep {
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    display: inline-block;
+  }
+
+  .hero-logo {
+    width: min(400px, 78vw);
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+
+  .hero-tagline {
+    font-family: 'The Seasons', 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.125rem, 2.5vw, 1.4375rem);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.65;
+    max-width: 500px;
+  }
+
+  .btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.9375rem 2.5rem;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 100px;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: background-color 0.4s, border-color 0.4s;
+  }
+
+  .btn-hero:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    animation: scrollBounce 2.2s ease-in-out infinite;
+  }
+
+  .scroll-text {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    width: 18px;
+    height: 18px;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+    50%       { transform: translateX(-50%) translateY(7px); opacity: 0.9; }
+  }
+}
+
+/* ================================================================
+   SECTION LAYOUT HELPERS
+   ================================================================ */
+@layer components {
+  .section-cream { background-color: #F8F3EE; }
+  .section-white { background-color: #FFFFFF; }
+  .section-beige { background-color: #EDE4D8; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6.5rem 2rem;
+  }
+
+  .section-label {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Tan Mon Cheri', 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 400;
+    color: #5C3A28;
+    text-align: center;
+    line-height: 1.12;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .section-subtitle {
+    font-family: 'The Seasons', 'Playfair Display', serif;
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: #A05C3B;
+    text-align: center;
+    margin-bottom: 4rem;
+    opacity: 0.85;
+  }
+
+  .ornament-paren {
+    display: block;
+    font-family: 'Cormorant Garamond', 'Tan Mon Cheri', serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: #EDE4D8;
+    text-align: center;
+    user-select: none;
+    letter-spacing: -0.05em;
+    margin: 1.5rem 0;
+  }
+}
+
+/* ================================================================
+   PHILOSOPHIE
+   ================================================================ */
+@layer components {
+  .philosophie-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .philosophie-body {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #5C3A28;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .philosophie-quote {
+    font-family: 'Tan Mon Cheri', 'Cormorant Garamond', serif;
+    font-size: clamp(1.375rem, 2.8vw, 1.875rem);
+    font-weight: 400;
+    color: #A05C3B;
+    text-align: center;
+    line-height: 1.45;
+    padding: 2.75rem 2rem;
+    border-top: 1px solid #EDE4D8;
+    border-bottom: 1px solid #EDE4D8;
+    margin: 0 0 2.5rem;
+  }
+}
+
+/* ================================================================
+   À PROPOS
+   ================================================================ */
+@layer components {
+  .apropos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .apropos-grid {
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 5rem;
+      align-items: start;
+    }
+  }
+
+  .bio-text {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #5C3A28;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-closing {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #EDE4D8;
+    margin-bottom: 2.5rem;
+  }
+
+  .bio-closing-text {
+    font-family: 'The Seasons', 'Playfair Display', serif;
+    font-size: 1.125rem;
+    font-style: italic;
+    color: #A05C3B;
+    margin-bottom: 1.25rem;
+  }
+
+  .bio-signature {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.82;
+  }
+
+  .affiliations {
+    padding-top: 2rem;
+    border-top: 1px solid #EDE4D8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .affiliation-item {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #A05C3B;
+    padding-left: 1.125rem;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .affiliation-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(160, 92, 59, 0.4);
+    font-weight: 300;
+  }
+
+  /* Timeline */
+  .credentials {
+    padding-top: 0.25rem;
+  }
+
+  .credentials-title {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    margin-bottom: 1.75rem;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1.125rem 0;
+    border-bottom: 1px solid #EDE4D8;
+    align-items: start;
+  }
+
+  .timeline-item:first-child {
+    border-top: 1px solid #EDE4D8;
+  }
+
+  .timeline-year {
+    font-family: 'The Seasons', 'Playfair Display', serif;
+    font-size: 0.875rem;
+    color: #A05C3B;
+    padding-top: 0.1rem;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+
+  .timeline-desc {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.65;
+    color: #5C3A28;
+  }
+}
+
+/* ================================================================
+   CABINET
+   ================================================================ */
+@layer components {
+  .cabinet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .cabinet-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .cabinet-placeholder {
+    aspect-ratio: 4 / 3;
+    background-color: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(160, 92, 59, 0.14);
+    border-radius: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    color: rgba(160, 92, 59, 0.5);
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .cabinet-placeholder:hover {
+    border-color: rgba(160, 92, 59, 0.3);
+  }
+
+  .placeholder-tooth {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.25;
+    object-fit: contain;
+  }
+}
+
+/* ================================================================
+   PROTOCOLES
+   ================================================================ */
+@layer components {
+  .protocols-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 600px) {
+    .protocols-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .protocols-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .protocol-card {
+    background: white;
+    border: 1px solid #EDE4D8;
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
+    cursor: default;
+  }
+
+  .protocol-card:hover {
+    border-color: rgba(160, 92, 59, 0.45);
+    box-shadow: 0 10px 40px rgba(160, 92, 59, 0.07);
+    transform: translateY(-3px);
+  }
+
+  .protocol-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: #A05C3B;
+    flex-shrink: 0;
+  }
+
+  .protocol-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .protocol-title {
+    font-family: 'The Seasons', 'Playfair Display', serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #5C3A28;
+    line-height: 1.3;
+  }
+
+  .protocol-desc {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.72;
+    color: #A05C3B;
+    opacity: 0.9;
+  }
+}
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+@layer components {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+  }
+
+  .contact-section-title {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-block {
+    margin-bottom: 2.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    margin-bottom: 1.375rem;
+  }
+
+  .contact-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    color: #A05C3B;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .contact-label {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5C3A28;
+    display: block;
+  }
+
+  .contact-note {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    color: #A05C3B;
+    font-style: italic;
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 300;
+    padding: 0.6875rem 0;
+    border-bottom: 1px solid #EDE4D8;
+    color: #5C3A28;
+    line-height: 1.4;
+  }
+
+  .hours-table td:last-child {
+    text-align: right;
+    color: #A05C3B;
+    font-weight: 400;
+  }
+
+  .access-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .access-list li {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #5C3A28;
+    padding-left: 1.125rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .access-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: #A05C3B;
+    font-weight: 700;
+  }
+
+  .btn-rdv {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9375rem 2.25rem;
+    background-color: #A05C3B;
+    color: white;
+    border-radius: 100px;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: background-color 0.35s;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-rdv:hover {
+    background-color: #5C3A28;
+  }
+
+  .btn-rdv svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s;
+  }
+
+  .btn-rdv:hover svg {
+    transform: translateX(3px);
+  }
+
+  .cancellation-note {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    color: #A05C3B;
+    opacity: 0.75;
+  }
+
+  .contact-map-wrap {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border: 1px solid #EDE4D8;
+    background: #EDE4D8;
+  }
+
+  .map-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .map-address {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #EDE4D8;
+    background: white;
+  }
+
+  .map-address p {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #5C3A28;
+    line-height: 1.6;
+  }
+}
+
+/* ================================================================
+   COLLABORATIONS
+   ================================================================ */
+@layer components {
+  .collab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .collab-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .collab-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .collab-card {
+    background: white;
+    border: 1px solid rgba(237, 228, 216, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem 1.375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+
+  .collab-card:hover {
+    border-color: rgba(160, 92, 59, 0.35);
+    box-shadow: 0 6px 24px rgba(160, 92, 59, 0.07);
+    transform: translateY(-2px);
+  }
+
+  .collab-domain {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #A05C3B;
+    opacity: 0.8;
+    margin-bottom: 0.1rem;
+  }
+
+  .collab-name {
+    font-family: 'The Seasons', 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #5C3A28;
+    line-height: 1.35;
+  }
+
+  .collab-name.tbd {
+    font-style: italic;
+    color: rgba(160, 92, 59, 0.5);
+  }
+
+  .collab-location {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    color: #A05C3B;
+    opacity: 0.75;
+  }
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+@layer components {
+  .footer-section {
+    background-color: #5C3A28;
+  }
+
+  .footer-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 5.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.25rem;
+  }
+
+  .footer-logo {
+    height: 52px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+  }
+
+  .footer-rule {
+    width: 48px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+  }
+
+  .footer-quote {
+    font-family: 'The Seasons', 'Playfair Display', serif;
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.72;
+    max-width: 440px;
+    margin: 0;
+  }
+
+  .footer-author {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.38);
+    margin-top: -1rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-copy {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .back-to-top {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .back-to-top:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}

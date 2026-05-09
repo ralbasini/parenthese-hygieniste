@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"c:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\\")",
+      "Read(//c/Users/user/OneDrive/Projet/**)",
+      "Bash(gh api *)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\" -Recurse -Force | Select-Object FullName | Where-Object { $_.FullName -match \"plugin|frontend\" })",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\.claude\" -Recurse -Force | Select-Object FullName)",
+      "PowerShell(dir \"$env:USERPROFILE\\\\.claude\" -Force)",
+      "Bash(claude plugin *)",
+      "PowerShell(claude plugin add https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design 2>&1)",
+      "PowerShell(npx claude --version 2>&1)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "PowerShell(& \"$env:LOCALAPPDATA\\\\claude-cli-nodejs\\\\claude.exe\" plugin add https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design)",
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\claude-cli-nodejs\" -Force)",
+      "Bash(find /c/Users/user/AppData -name \"claude.exe\" -o -name \"claude.cmd\" -o -name \"claude.ps1\" 2>/dev/null | head -20)",
+      "Read(//c/Users/user/AppData/**)",
+      "Bash(find /c/Users/user -maxdepth 5 -name \"claude\" -type f 2>/dev/null | grep -v \".git\" | head -20)",
+      "Read(//c/Users/user/**)",
+      "Bash(npm install *)",
+      "Bash(claude --version)",
+      "Bash(claude skills *)",
+      "Bash(claude plugins *)",
+      "Bash(npm init *)",
+      "Bash(cd \"c:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\" && mkdir -p public/assets/fonts public/assets/images public/assets/icons src && echo \"Directories created\")",
+      "Bash(cp \"resources/Cabinet Parenthèse Hygiéniste brun - PNG.png\" \"parenthese-hygieniste/public/assets/images/logo-brun.png\")",
+      "Bash(cp \"resources/Cabinet Parenthèse Hygiéniste blanc - PNG.png\" \"parenthese-hygieniste/public/assets/images/logo-blanc.png\")",
+      "Bash(cp \"resources/Logo Dent brun fond blanc - PNG.png\" \"parenthese-hygieniste/public/assets/images/logo-dent-brun.png\")",
+      "Bash(cp \"resources/Logo Dent blanche fond brun - PNG.png\" \"parenthese-hygieniste/public/assets/images/logo-dent-blanc.png\")",
+      "Bash(cp \"resources/Signature Marine brun - PNG.png\" \"parenthese-hygieniste/public/assets/images/signature.png\")",
+      "Bash(npm run *)",
+      "Bash(findstr 5173)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/logo-brun.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/toothbrush.jpg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/images/signature.png)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets"
+    ]
+  }
+}

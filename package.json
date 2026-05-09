@@ -1,0 +1,22 @@
+{
+  "name": "parenthese-hygieniste",
+  "version": "1.0.0",
+  "description": "Cabinet Parenthèse Hygiéniste — Marine Ravaz-Largey",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralbasini/parenthese-hygieniste.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.0.11"
+  }
+}
