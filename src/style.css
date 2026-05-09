@@ -622,7 +622,7 @@
     left: 0;
     width: 100%;
     color: #A05C3B;
-    opacity: 0.22;
+    opacity: 0.28;
     pointer-events: none;
     z-index: 0;
   }
@@ -637,6 +637,11 @@
   .scribble-mid    { top: 30%; }
   .scribble-bot    { bottom: -240px; }
   .scribble-center { top: 50%; transform: translateY(-50%); }
+
+  @media (max-width: 767px) {
+    .scribble,
+    .scribble-fill { display: none; }
+  }
 
   .scribble-fill {
     position: absolute;

@@ -221,7 +221,14 @@
   <section id="apropos" class="section-white">
     <div class="scribble scribble-bot" aria-hidden="true">
       <svg viewBox="0 0 1400 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-40 80 C60 130 140 280 260 250 C370 222 400 100 510 80 C600 62 660 140 720 200 C780 260 800 340 880 320 C950 302 970 220 930 175 C890 130 835 138 840 178 C845 218 900 228 940 205 C1020 160 1120 60 1200 90 C1310 128 1380 260 1450 200" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <defs>
+          <linearGradient id="sg-apropos" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="30%" stop-color="#A05C3B" stop-opacity="1"/>
+            <stop offset="55%" stop-color="#C4A898" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#F0EDE8" stop-opacity="0.6"/>
+          </linearGradient>
+        </defs>
+        <path d="M-40 80 C60 130 140 280 260 250 C370 222 400 100 510 80 C600 62 660 140 720 200 C780 260 800 340 880 320 C950 302 970 220 930 175 C890 130 835 138 840 178 C845 218 900 228 940 205 C1020 160 1120 60 1200 90 C1310 128 1380 260 1450 200" stroke="url(#sg-apropos)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
     </div>
     <div class="section-inner">
