@@ -679,8 +679,6 @@
 
   .bio-closing {
     margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid #EDE4D8;
     margin-bottom: 2.5rem;
   }
 
@@ -935,6 +933,25 @@
 
   .protocol-rdv:hover::after {
     transform: translateX(3px);
+  }
+
+  .protocol-card--more {
+    border-style: dashed;
+    border-color: rgba(139, 126, 200, 0.5);
+    background: rgba(255, 255, 255, 0.20);
+  }
+
+  .protocol-card--more .protocol-icon {
+    color: var(--brand-purple);
+  }
+
+  .protocol-card--more .protocol-desc {
+    color: var(--brand-purple);
+  }
+
+  .protocol-card--more .protocol-rdv {
+    border-color: rgba(139, 126, 200, 0.4);
+    color: var(--brand-purple);
   }
 
 }
