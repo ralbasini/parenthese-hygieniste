@@ -109,14 +109,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Tan Mon Cheri';
-  src: url('/assets/fonts/TanMonCheri.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 
 @font-face {
   font-family: 'The Seasons';
@@ -444,7 +436,7 @@
    ================================================================ */
 @layer components {
 
-  /* Shared elements across all 3 proposals */
+  /* Hero shared elements */
   .ha-name {
     font-family: 'Tan Mon Cheri', Georgia, serif;
     font-size: clamp(1.125rem, 2.5vw, 1.625rem);
@@ -574,9 +566,6 @@
   .section-inner {
     position: relative;
     z-index: 2;
-  }
-
-  .section-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 6.5rem 2rem;
@@ -838,23 +827,7 @@
    PROTOCOLES
    ================================================================ */
 @layer components {
-  /* ── Option badge (preview label) */
-  .option-badge {
-    display: inline-block;
-    padding: 0.3rem 1rem;
-    border: 1px solid var(--brand-purple);
-    color: var(--brand-purple);
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    border-radius: 0.5rem;
-    margin-bottom: 1.75rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ── Option A — 3 columns, generous padding */
+  /* ── Grid — 2 columns */
   .protocols-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -964,126 +937,6 @@
     transform: translateX(3px);
   }
 
-  /* ── Option B — horizontal 2-col layout */
-  .protocols-grid-b {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  @media (min-width: 640px) {
-    .protocols-grid-b { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .protocol-card-b {
-    background: white;
-    border: 1px solid #EDE4D8;
-    border-radius: 1.25rem;
-    padding: 2.25rem 2rem;
-    display: grid;
-    grid-template-columns: 2.75rem 1fr;
-    grid-template-rows: auto 1fr auto;
-    column-gap: 1.5rem;
-    row-gap: 0.75rem;
-    align-items: start;
-    transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
-  }
-
-  .protocol-card-b:hover {
-    border-color: rgba(160, 92, 59, 0.4);
-    box-shadow: 0 8px 32px rgba(160, 92, 59, 0.07);
-    transform: translateY(-2px);
-  }
-
-  .protocol-card-b .protocol-icon {
-    grid-column: 1;
-    grid-row: 1 / 4;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding-top: 0.2rem;
-  }
-
-  .protocol-card-b .protocol-title { grid-column: 2; grid-row: 1; }
-  .protocol-card-b .protocol-desc  { grid-column: 2; grid-row: 2; }
-  .protocol-card-b .protocol-rdv   { grid-column: 2; grid-row: 3; }
-
-  /* ── Option C — 1 per row, button bottom-right */
-  .protocols-grid-c {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .protocol-card-c {
-    background: white;
-    border: 1px solid #EDE4D8;
-    border-radius: 1.25rem;
-    padding: 1.75rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
-  }
-
-  .protocol-card-c:hover {
-    border-color: rgba(160, 92, 59, 0.4);
-    box-shadow: 0 8px 32px rgba(160, 92, 59, 0.07);
-    transform: translateY(-2px);
-  }
-
-  .protocol-card-c .protocol-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .protocol-card-c .protocol-desc {
-    flex: 1;
-    margin: 0;
-  }
-
-  .protocol-card-c .protocol-rdv {
-    align-self: flex-end;
-    font-size: 0.7rem;
-    padding: 0.375rem 0.875rem;
-    white-space: nowrap;
-    margin-top: 0.25rem;
-  }
-
-  @media (min-width: 560px) {
-    .protocol-card-c {
-      display: grid;
-      grid-template-columns: 2.75rem 1fr auto;
-      grid-template-rows: auto 1fr;
-      column-gap: 2rem;
-      row-gap: 0.5rem;
-      align-items: start;
-      padding: 2.25rem 2.5rem;
-    }
-
-    .protocol-card-c .protocol-icon {
-      grid-column: 1;
-      grid-row: 1 / 3;
-      align-self: center;
-    }
-
-    .protocol-card-c .protocol-title {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
-    .protocol-card-c .protocol-desc {
-      grid-column: 2;
-      grid-row: 2;
-    }
-
-    .protocol-card-c .protocol-rdv {
-      grid-column: 3;
-      grid-row: 1 / 3;
-      align-self: end;
-      justify-self: end;
-      margin-top: 0;
-    }
-  }
 }
 
 /* ================================================================
