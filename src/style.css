@@ -467,9 +467,9 @@
     inset: 0;
     background: linear-gradient(
       150deg,
-      rgba(92, 58, 40, 0.92) 0%,
-      rgba(92, 58, 40, 0.84) 40%,
-      rgba(160, 92, 59, 0.78) 100%
+      rgba(92, 58, 40, 0.72) 0%,
+      rgba(92, 58, 40, 0.62) 40%,
+      rgba(160, 92, 59, 0.55) 100%
     );
   }
 
@@ -858,10 +858,25 @@
    PROTOCOLES
    ================================================================ */
 @layer components {
+  /* ── Option badge (preview label) */
+  .option-badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border: 1px solid var(--brand-purple);
+    color: var(--brand-purple);
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* ── Option A — 3 columns, generous padding */
   .protocols-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 2rem;
   }
 
   @media (min-width: 600px) {
@@ -875,11 +890,11 @@
   .protocol-card {
     background: white;
     border: 1px solid #EDE4D8;
-    border-radius: 1.25rem;
-    padding: 2.25rem 2rem;
+    border-radius: 1.5rem;
+    padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
     transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
     cursor: default;
   }
@@ -891,8 +906,8 @@
   }
 
   .protocol-icon {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 3rem;
+    height: 3rem;
     color: var(--brand-purple);
     flex-shrink: 0;
   }
@@ -953,6 +968,91 @@
 
   .protocol-rdv:hover::after {
     transform: translateX(3px);
+  }
+
+  /* ── Option B — horizontal 2-col layout */
+  .protocols-grid-b {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .protocols-grid-b { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .protocol-card-b {
+    background: white;
+    border: 1px solid #EDE4D8;
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem;
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 1.5rem;
+    row-gap: 0.75rem;
+    align-items: start;
+    transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
+  }
+
+  .protocol-card-b:hover {
+    border-color: rgba(160, 92, 59, 0.4);
+    box-shadow: 0 8px 32px rgba(160, 92, 59, 0.07);
+    transform: translateY(-2px);
+  }
+
+  .protocol-card-b .protocol-icon {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding-top: 0.2rem;
+  }
+
+  .protocol-card-b .protocol-title { grid-column: 2; grid-row: 1; }
+  .protocol-card-b .protocol-desc  { grid-column: 2; grid-row: 2; }
+  .protocol-card-b .protocol-rdv   { grid-column: 2; grid-row: 3; }
+
+  /* ── Option C — 2 large editorial columns */
+  .protocols-grid-c {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .protocols-grid-c { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .protocol-card-c {
+    background: white;
+    border: 1px solid #EDE4D8;
+    border-top: 3px solid var(--brand-purple);
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: box-shadow 0.35s, transform 0.35s;
+  }
+
+  .protocol-card-c:hover {
+    box-shadow: 0 16px 48px rgba(139, 126, 200, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .protocol-card-c .protocol-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .protocol-card-c .protocol-title {
+    font-size: 1.25rem;
+  }
+
+  .protocol-card-c .protocol-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
   }
 }
 
