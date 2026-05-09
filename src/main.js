@@ -80,8 +80,8 @@ const hamburger  = document.getElementById('hamburger')
 const mobileMenu = document.getElementById('mobile-menu')
 
 hamburger.addEventListener('click', () => {
-  const isOpen = !mobileMenu.classList.contains('hidden')
-  mobileMenu.classList.toggle('hidden', isOpen)
+  const isOpen = mobileMenu.classList.contains('is-open')
+  mobileMenu.classList.toggle('is-open', !isOpen)
   hamburger.classList.toggle('open', !isOpen)
   hamburger.setAttribute('aria-expanded', String(!isOpen))
 })
@@ -89,7 +89,7 @@ hamburger.addEventListener('click', () => {
 // Close mobile menu when a link is tapped
 mobileMenu.querySelectorAll('a').forEach((a) => {
   a.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden')
+    mobileMenu.classList.remove('is-open')
     hamburger.classList.remove('open')
     hamburger.setAttribute('aria-expanded', 'false')
   })
