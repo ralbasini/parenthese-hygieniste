@@ -95,6 +95,15 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   })
 })
 
+// ── Protocol card accordion
+document.querySelectorAll('.protocol-card .protocol-rdv[type="button"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.protocol-card')
+    const isOpen = card.classList.toggle('is-open')
+    btn.textContent = isOpen ? 'Fermer'  : 'Plus d\'information'
+  })
+})
+
 // ── Subtle parallax on hero background
 const heroBg = document.querySelector('.hero-bg')
 if (heroBg) {
