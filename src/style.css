@@ -443,9 +443,10 @@
   /* Hero shared elements */
   .ha-name {
     font-family: 'Tan Mon Cheri', Georgia, serif;
-    font-size: clamp(1.125rem, 2.5vw, 1.625rem);
+    font-size: clamp(0.875rem, 1.8vw, 1.2rem);
     font-weight: 400;
     color: #5C3A28;
+    text-transform: uppercase;
     letter-spacing: 0.06em;
     line-height: 1.2;
   }
@@ -465,14 +466,14 @@
     text-transform: uppercase;
     color: var(--brand-purple);
     opacity: 0.85;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
   }
 
   .hp-cta {
     display: inline-flex;
     align-items: center;
     padding: 0.75rem 2rem;
-    margin-top: 1.5rem;
+    margin-top: auto;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.07em;
@@ -507,7 +508,7 @@
     z-index: 1;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     gap: 4rem;
     width: 100%;
     max-width: 1100px;
@@ -520,19 +521,22 @@
     align-items: center;
     text-align: center;
     gap: 0;
+    position: relative;
   }
 
   .ha-right {
-    flex: 1;
+    flex: 1.5;
   }
 
   .ha-photo-wrap {
     position: relative;
+    height: 100%;
   }
 
   .ha-cabinet-photo {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
+    min-height: 420px;
     object-fit: cover;
     border-radius: 1.125rem;
     display: block;
@@ -559,10 +563,10 @@
   }
 
   .ha-logo {
-    width: min(460px, 100%);
+    width: min(420px, 100%);
     height: auto;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
   }
 
   .ha-photo-placeholder {
@@ -584,7 +588,11 @@
   }
 
   .ha-identity {
-    flex: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -609,7 +617,9 @@
     }
     .ha-logo     { order: 1; width: min(400px, 94vw); margin-top: 2.5rem; margin-bottom: -0.75rem; }
     .ha-photo-badge { width: 4rem; height: 4rem; top: -0.75rem; right: -0.75rem; }
-    .ha-identity { order: 2; align-items: center; text-align: center; flex: none; }
+    .ha-cabinet-photo { height: auto; min-height: unset; aspect-ratio: 4 / 3; }
+    .ha-photo-wrap { height: auto; }
+    .ha-identity { order: 2; position: static; transform: none; align-items: center; text-align: center; flex: none; }
     .ha-right    { order: 3; width: 100%; }
     .hp-cta      { order: 4; }
     .ha-opening  { order: 5; }
