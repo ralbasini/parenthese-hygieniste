@@ -692,6 +692,10 @@
     letter-spacing: 0.08em;
   }
 
+  .section-subtitle.section-subtitle--tight {
+    margin-bottom: 0.2rem;
+  }
+
   .section-subtitle {
     font-family: 'Bellota', Georgia, serif;
     font-size: 1.0625rem;
@@ -1229,6 +1233,16 @@
     line-height: 1.6;
   }
 
+  .access-note {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #A05C3B;
+    opacity: 0.75;
+    margin-bottom: 0.75rem;
+  }
+
   .access-list li::before {
     content: '·';
     position: absolute;
@@ -1310,9 +1324,13 @@
 @layer components {
   .collab-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1rem;
     align-items: start;
+  }
+
+  @media (min-width: 480px) {
+    .collab-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (min-width: 640px) {
