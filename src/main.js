@@ -95,6 +95,13 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   })
 })
 
+// ── Collab card accordion
+document.querySelectorAll('.collab-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.collab-card').classList.toggle('is-open')
+  })
+})
+
 // ── Protocol card accordion
 document.querySelectorAll('.protocol-card .protocol-rdv[type="button"]').forEach(btn => {
   btn.addEventListener('click', () => {
