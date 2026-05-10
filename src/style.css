@@ -608,6 +608,7 @@
       display: contents;
     }
     .ha-logo     { order: 1; width: min(400px, 94vw); margin-top: 2.5rem; margin-bottom: -0.75rem; }
+    .ha-photo-badge { width: 4rem; height: 4rem; top: -0.75rem; right: -0.75rem; }
     .ha-identity { order: 2; align-items: center; text-align: center; flex: none; }
     .ha-right    { order: 3; width: 100%; }
     .hp-cta      { order: 4; }
@@ -623,6 +624,9 @@
   .section-cream { background-color: #EAE8E5; position: relative; }
   .section-white { background-color: #FFFFFF; position: relative; }
   .section-beige { background-color: #D9D5CF; position: relative; }
+
+  .scribble,
+  .scribble-fill { display: none; }
 
   .scribble {
     position: absolute;
@@ -1343,12 +1347,8 @@
     .collab-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 700px) {
     .collab-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  @media (min-width: 1024px) {
-    .collab-grid { grid-template-columns: repeat(4, 1fr); }
   }
 
   .collab-card {
