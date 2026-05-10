@@ -942,7 +942,7 @@
     padding: 1.75rem 2rem;
     display: grid;
     grid-template-columns: 3rem 1fr;
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: auto auto auto 1fr auto;
     column-gap: 1.5rem;
     row-gap: 0.5rem;
     align-items: start;
@@ -958,7 +958,7 @@
 
   .protocol-icon {
     grid-column: 1;
-    grid-row: 1 / 5;
+    grid-row: 1 / 6;
     width: 3rem;
     height: 3rem;
     color: var(--brand-purple);
@@ -971,6 +971,7 @@
   .protocol-details {
     grid-column: 2;
     grid-row: 3;
+    align-self: start;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
@@ -981,17 +982,53 @@
     font-weight: 300;
     line-height: 1.7;
     color: #7A5C46;
+    margin: 0 0 0.5rem 0;
+  }
+  .protocol-details p:first-child {
     padding-top: 0.75rem;
-    padding-bottom: 0.25rem;
     border-top: 1px solid #EDE4D8;
     margin-top: 0.5rem;
   }
+  .protocol-details p:last-child {
+    margin-bottom: 0.25rem;
+  }
+  .protocol-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0.25rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .protocol-list li {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.8375rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #7A5C46;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .protocol-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 0.45rem;
+    height: 1px;
+    background-color: var(--brand-purple);
+  }
+  .protocol-term {
+    color: var(--brand-purple);
+    font-weight: 400;
+  }
   .protocol-card.is-open .protocol-details {
-    max-height: 300px;
+    max-height: 600px;
   }
   .protocol-rdv   {
     grid-column: 2;
-    grid-row: 4;
+    grid-row: 5;
+    align-self: end;
     justify-self: end;
     font-size: 0.7rem;
     padding: 0.375rem 0.875rem;
@@ -1352,6 +1389,9 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.35rem;
+  }
+  .collab-detail-item .contact-icon {
+    margin-top: 0;
   }
   .collab-detail-text {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
