@@ -508,7 +508,7 @@
     align-items: center;
     justify-content: center;
     padding: 4rem;
-    --photo-h: 580px;
+    --photo-h: min(460px, calc(100vh - 12rem));
   }
 
   /* ── Desktop: flex row, left col 70% of photo height */
