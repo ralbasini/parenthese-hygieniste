@@ -489,7 +489,7 @@
     border-color: #4E2F5A;
   }
 
-  /* ── Proposal A: two-column (text left, photo right) */
+  /* ── Hero */
   .hero-a {
     min-height: 100vh;
     overflow: hidden;
@@ -498,45 +498,56 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem 4rem 4rem;
+    padding: 4rem;
+    --photo-h: 480px;
   }
 
+  /* ── Desktop: flex row, left col 70% of photo height */
   .ha-layout {
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     gap: 4rem;
     width: 100%;
     max-width: 1100px;
   }
 
-  .ha-left {
+  .ha-left-col {
     flex: 1;
+    height: calc(var(--photo-h) * 0.70);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
-    gap: 0;
-    position: relative;
   }
 
-  .ha-cta-group {
+  .ha-block {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
-    margin-top: auto;
+    justify-content: center;
+    text-align: center;
   }
 
-  .ha-right {
+  .ha-block--cta { gap: 0.75rem; }
+
+  .ha-block--photo {
     flex: 1.5;
+    height: var(--photo-h);
+  }
+
+  .ha-logo {
+    width: min(420px, 100%);
+    height: auto;
   }
 
   .ha-photo-wrap {
     position: relative;
     height: 100%;
+    width: 100%;
   }
 
   .ha-cabinet-photo {
@@ -568,44 +579,7 @@
     object-fit: contain;
   }
 
-  .ha-logo {
-    width: min(420px, 100%);
-    height: auto;
-    margin-top: 0;
-    margin-bottom: 2.5rem;
-  }
-
-  .ha-photo-placeholder {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background-color: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(160, 92, 59, 0.2);
-    border-radius: 1.125rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    color: rgba(92, 58, 40, 0.45);
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
-    letter-spacing: 0.06em;
-    text-align: center;
-  }
-
-  .ha-identity {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.375rem;
-  }
-
+  /* ── Mobile: 4 equal blocks stacked, filling 100svh */
   @media (max-width: 767px) {
     .nav-container {
       grid-template-columns: 1fr auto;
@@ -614,27 +588,31 @@
       height: 100vh;
       height: 100svh;
       overflow: hidden;
-      padding: 6rem 1.5rem 2.5rem;
+      padding: 5rem 1.5rem 1.5rem;
       align-items: stretch;
     }
     .ha-layout {
+      display: flex;
       flex: 1;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 2.5rem;
+      gap: 0;
       min-height: 0;
     }
-    .ha-left {
+    .ha-left-col {
       display: contents;
     }
-    .ha-logo      { order: 1; width: min(400px, 94vw); margin-top: 0; margin-bottom: 0; }
-    .ha-identity  { order: 2; position: static; transform: none; align-items: center; text-align: center; flex: none; }
-    .ha-right     { order: 3; width: 100%; }
-    .ha-cta-group { order: 4; margin-top: auto; }
-    .ha-photo-badge { width: 4rem; height: 4rem; top: -0.75rem; right: -0.75rem; }
-    .ha-cabinet-photo { height: auto; min-height: unset; aspect-ratio: unset; max-height: 25vh; width: 100%; object-fit: cover; }
-    .ha-photo-wrap { height: auto; }
+    .ha-block {
+      flex: 1;
+      height: auto;
+    }
+    .ha-block--logo     { order: 1; }
+    .ha-block--identity { order: 2; }
+    .ha-block--photo    { order: 3; }
+    .ha-block--cta      { order: 4; }
+    .ha-block--photo .ha-photo-wrap { height: 100%; }
+    .ha-cabinet-photo { height: 100%; min-height: unset; border-radius: 0.875rem; }
+    .ha-photo-badge { width: 3.5rem; height: 3.5rem; top: -0.5rem; right: -0.5rem; }
+    .ha-logo { width: min(360px, 90vw); }
   }
 
 }
