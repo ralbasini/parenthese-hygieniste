@@ -1007,8 +1007,11 @@
     font-size: 0.7rem;
     transition: transform 0.25s;
   }
+  .protocol-rdv--no-arrow::after {
+    display: none;
+  }
   .protocol-card.is-open .protocol-rdv::after {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
   }
 
   .protocol-rdv:hover {
