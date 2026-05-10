@@ -472,7 +472,7 @@
     display: inline-flex;
     align-items: center;
     padding: 0.75rem 2rem;
-    margin-top: auto;
+    margin-top: 1.5rem;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.07em;
@@ -496,21 +496,10 @@
     overflow: hidden;
     position: relative;
     background-color: #EAE8E5;
-    background-image: url('/assets/images/cabinet.jpg');
-    background-size: cover;
-    background-position: center 30%;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     padding: 4rem 4rem 4rem;
-  }
-
-  .hero-a::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: rgba(210, 185, 150, 0.72);
   }
 
   .ha-layout {
@@ -518,7 +507,7 @@
     z-index: 1;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     gap: 4rem;
     width: 100%;
     max-width: 1100px;
@@ -535,6 +524,38 @@
 
   .ha-right {
     flex: 1;
+  }
+
+  .ha-photo-wrap {
+    position: relative;
+  }
+
+  .ha-cabinet-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1.125rem;
+    display: block;
+  }
+
+  .ha-photo-badge {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid rgba(160, 92, 59, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ha-photo-badge img {
+    width: 82%;
+    height: 82%;
+    object-fit: contain;
   }
 
   .ha-logo {
@@ -576,36 +597,21 @@
       grid-template-columns: 1fr auto;
     }
     .hero-a {
-      padding: 4rem 1.5rem 3rem;
+      padding: 1.5rem 1.5rem 3rem;
     }
     .ha-layout {
       flex-direction: column;
-      gap: 0;
-      min-height: calc(100vh - 7rem);
+      align-items: center;
+      gap: 1.5rem;
     }
     .ha-left {
-      position: relative;
-      min-height: calc(100vh - 7rem);
-      align-items: center;
-      text-align: center;
+      display: contents;
     }
-    .ha-identity {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      transform: translateY(-50%);
-      flex: none;
-      align-items: center;
-    }
-    .ha-logo {
-      width: min(400px, 94vw);
-      margin-top: 2.5rem;
-      margin-bottom: 0;
-    }
-    .ha-right {
-      width: 100%;
-    }
+    .ha-logo     { order: 1; width: min(400px, 94vw); margin-top: 2.5rem; margin-bottom: -0.75rem; }
+    .ha-identity { order: 2; align-items: center; text-align: center; flex: none; }
+    .ha-right    { order: 3; width: 100%; }
+    .hp-cta      { order: 4; }
+    .ha-opening  { order: 5; }
   }
 
 }
@@ -783,6 +789,10 @@
   .bio-closing {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
   }
 
   .bio-closing-text {
