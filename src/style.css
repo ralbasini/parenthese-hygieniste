@@ -1120,8 +1120,8 @@
   .protocol-rdv:hover,
   .protocol-card:hover .protocol-rdv {
     border-color: var(--brand-purple);
-    background-color: var(--brand-purple);
-    color: white;
+    background-color: var(--brand-purple-light);
+    color: var(--brand-purple);
   }
 
   .protocol-rdv:hover::after,
