@@ -97,19 +97,23 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   })
 })
 
-// ── Collab card accordion
-document.querySelectorAll('.collab-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.closest('.collab-card').classList.toggle('is-open')
+// ── Collab card accordion — click anywhere on card
+document.querySelectorAll('.collab-card').forEach(card => {
+  if (!card.querySelector('.collab-toggle')) return
+  card.style.cursor = 'pointer'
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-open')
   })
 })
 
-// ── Protocol card accordion
-document.querySelectorAll('.protocol-card .protocol-rdv[type="button"]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.protocol-card')
+// ── Protocol card accordion — click anywhere on card
+document.querySelectorAll('.protocol-card').forEach(card => {
+  const btn = card.querySelector('.protocol-rdv[type="button"]')
+  if (!btn) return
+  card.style.cursor = 'pointer'
+  card.addEventListener('click', () => {
     const isOpen = card.classList.toggle('is-open')
-    btn.textContent = isOpen ? 'Fermer'  : 'Plus d\'information'
+    btn.textContent = isOpen ? 'Fermer' : 'Plus d\'information'
   })
 })
 

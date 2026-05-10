@@ -1102,7 +1102,7 @@
     border-radius: 0.875rem;
     text-decoration: none;
     align-self: flex-start;
-    transition: border-color 0.25s, color 0.25s, background-color 0.25s;
+    transition: border-color 0.5s, color 0.5s, background-color 0.5s;
   }
 
   .protocol-rdv::after {
@@ -1117,13 +1117,15 @@
     transform: rotate(-90deg);
   }
 
-  .protocol-rdv:hover {
+  .protocol-rdv:hover,
+  .protocol-card:hover .protocol-rdv {
     border-color: var(--brand-purple);
     background-color: var(--brand-purple);
     color: white;
   }
 
-  .protocol-rdv:hover::after {
+  .protocol-rdv:hover::after,
+  .protocol-card:hover .protocol-rdv::after {
     transform: translateX(3px);
   }
 
@@ -1454,7 +1456,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.25s, border-color 0.25s, transform 0.3s;
+    transition: background-color 0.5s, border-color 0.5s, transform 0.3s;
     flex-shrink: 0;
   }
   .collab-toggle::before {
@@ -1468,9 +1470,10 @@
   .collab-card.is-open .collab-toggle::before {
     transform: rotate(45deg);
   }
-  .collab-toggle:hover {
-    background-color: rgba(160, 92, 59, 0.15);
-    border-color: #A05C3B;
+  .collab-toggle:hover,
+  .collab-card:hover .collab-toggle {
+    background-color: rgba(111, 67, 126, 0.15);
+    border-color: var(--brand-purple);
   }
 
   .collab-location {
