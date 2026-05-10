@@ -83,6 +83,7 @@ hamburger.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.contains('is-open')
   mobileMenu.classList.toggle('is-open', !isOpen)
   hamburger.classList.toggle('open', !isOpen)
+  navbar.classList.toggle('menu-open', !isOpen)
   hamburger.setAttribute('aria-expanded', String(!isOpen))
 })
 
@@ -91,6 +92,7 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   a.addEventListener('click', () => {
     mobileMenu.classList.remove('is-open')
     hamburger.classList.remove('open')
+    navbar.classList.remove('menu-open')
     hamburger.setAttribute('aria-expanded', 'false')
   })
 })

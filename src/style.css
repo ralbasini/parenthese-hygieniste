@@ -238,6 +238,14 @@
     box-shadow: 0 1px 0 rgba(160, 92, 59, 0.12);
   }
 
+  #navbar.menu-open {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(160, 92, 59, 0.12);
+    transition: none;
+  }
+
   .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -422,9 +430,10 @@
     padding: 0.75rem 2rem;
     background-color: #A05C3B;
     color: white;
+    text-transform: uppercase;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
     border-radius: 0.875rem;
     text-decoration: none;
     transition: background-color 0.3s;
