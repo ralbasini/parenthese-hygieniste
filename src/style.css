@@ -1324,6 +1324,12 @@
     font-weight: 700;
   }
 
+  .btn-rdv-br { display: none; }
+
+  @media (max-width: 767px) {
+    .btn-rdv-br { display: block; }
+  }
+
   .btn-rdv {
     display: inline-flex;
     align-items: center;
