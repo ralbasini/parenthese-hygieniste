@@ -57,6 +57,7 @@
     <div class="nav-container">
 
       <a href="#hero" class="nav-logo-link" aria-label="Accueil"></a>
+      <img src="/assets/images/logo-dent-brun.png" alt="" class="nav-dent-mobile" aria-hidden="true">
 
       <ul class="nav-links hidden md:flex" role="list">
         <li><a href="#philosophie" class="nav-link">Philosophie</a></li>
@@ -92,106 +93,24 @@
 
 
   <!-- ══════════════════════════════════════════════════════════════
-       HERO — PROPOSITION A : Logo centré, identité en dessous
+       HERO
        ══════════════════════════════════════════════════════════════ -->
-  <section id="hero" class="hero-a hero-version--a">
-    <span class="hero-version-badge">A</span>
-    <div class="scribble-fill" aria-hidden="true">
-      <svg viewBox="0 0 1400 800" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="sg-ha" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
-            <stop stop-color="#6F437E"><animate attributeName="offset" values="0;1.01;1.01;0;0" keyTimes="0;0.36;0.50;0.86;1" dur="19s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1"/></stop>
-            <stop stop-color="#A05C3B"><animate attributeName="offset" values="0.06;1.07;1.07;0.06;0.06" keyTimes="0;0.36;0.50;0.86;1" dur="19s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1;0 0 1 1;0.42 0 0.58 1;0 0 1 1"/></stop>
-          </linearGradient>
-        </defs>
-        <path d="M-60 120 C80 130 180 175 300 195 C420 215 460 275 580 265 C680 257 720 200 820 175 C910 152 980 148 1050 178 C1110 204 1130 262 1105 290 C1080 318 1044 305 1038 278 C1032 251 1058 234 1090 246 C1160 272 1270 330 1460 300" stroke="url(#sg-ha)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+  <section id="hero" class="hero-a">
     <div class="ha-layout">
-
       <div class="ha-left-col">
-
-        <div class="ha-identity-group fade-in">
-          <div class="ha-block ha-block--logo">
-            <img src="/assets/images/logo-brun.png"
-                 alt="Cabinet Parenthèse Hygiéniste"
-                 class="ha-logo">
-          </div>
-          <div class="ha-block ha-block--identity">
-            <p class="ha-name">Marine Ravaz-Largey</p>
-            <p class="ha-role">Hygiéniste dentaire</p>
-          </div>
+        <div class="ha-block ha-block--logo fade-in">
+          <img src="/assets/images/logo-brun.png" alt="Cabinet Parenthèse Hygiéniste" class="ha-logo">
         </div>
-
-        <div class="ha-block ha-block--cta fade-in delay-3">
-          <p class="ha-opening">Ouverture · 1<sup>er</sup> octobre 2026</p>
+        <div class="ha-block ha-block--identity fade-in delay-1">
+          <p class="ha-name">Marine Ravaz-Largey</p>
+          <p class="ha-role">Hygiéniste dentaire</p>
+        </div>
+        <div class="ha-block ha-block--cta ha-block--cta-reversed fade-in delay-3">
           <a href="#contact" class="hp-cta">Prendre rendez-vous</a>
+          <p class="ha-opening">Ouverture · 1<sup>er</sup> octobre 2026</p>
         </div>
-
       </div>
-
       <div class="ha-block ha-block--photo fade-in delay-2">
-        <div class="ha-photo-wrap">
-          <img src="/assets/images/cabinet.jpg"
-               alt="Cabinet Parenthèse Hygiéniste"
-               class="ha-cabinet-photo">
-          <div class="ha-photo-badge" aria-hidden="true">
-            <img src="/assets/images/logo-dent-brun.png" alt="">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ══ VERSION B (mobile only) ══ -->
-  <section class="hero-a hero-version--b">
-    <span class="hero-version-badge">B</span>
-    <div class="ha-layout">
-      <div class="ha-left-col">
-        <div class="ha-block ha-block--logo">
-          <img src="/assets/images/logo-brun.png" alt="Cabinet Parenthèse Hygiéniste" class="ha-logo">
-        </div>
-        <div class="ha-block ha-block--identity">
-          <p class="ha-name">Marine Ravaz-Largey</p>
-          <p class="ha-role">Hygiéniste dentaire</p>
-        </div>
-        <div class="ha-block ha-block--cta">
-          <p class="ha-opening">Ouverture · 1<sup>er</sup> octobre 2026</p>
-          <a href="#contact" class="hp-cta">Prendre rendez-vous</a>
-        </div>
-      </div>
-      <div class="ha-block ha-block--photo">
-        <div class="ha-photo-wrap">
-          <img src="/assets/images/cabinet.jpg" alt="Cabinet Parenthèse Hygiéniste" class="ha-cabinet-photo">
-          <div class="ha-photo-badge ha-photo-badge--bl" aria-hidden="true">
-            <img src="/assets/images/logo-dent-brun.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══ VERSION C (mobile only) ══ -->
-  <section class="hero-a hero-version--c">
-    <span class="hero-version-badge">C</span>
-    <div class="ha-layout">
-      <div class="ha-left-col">
-        <div class="ha-block ha-block--logo">
-          <img src="/assets/images/logo-brun.png" alt="Cabinet Parenthèse Hygiéniste" class="ha-logo">
-        </div>
-        <div class="ha-block ha-block--identity">
-          <p class="ha-name">Marine Ravaz-Largey</p>
-          <p class="ha-role">Hygiéniste dentaire</p>
-        </div>
-        <div class="ha-block ha-block--cta ha-block--cta-reversed">
-          <a href="#contact" class="hp-cta">Prendre rendez-vous</a>
-          <p class="ha-opening">Ouverture · 1<sup>er</sup> octobre 2026</p>
-        </div>
-      </div>
-      <div class="ha-block ha-block--photo">
         <div class="ha-photo-wrap">
           <img src="/assets/images/cabinet.jpg" alt="Cabinet Parenthèse Hygiéniste" class="ha-cabinet-photo">
           <div class="ha-photo-badge" aria-hidden="true">
