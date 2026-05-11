@@ -525,12 +525,27 @@
 
   .ha-left-col {
     flex: 1;
-    height: calc(var(--photo-h) * 0.70);
+    height: var(--photo-h);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .ha-identity-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid #c5ae91;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 100%;
   }
 
   .ha-block {
@@ -614,21 +629,19 @@
       flex: 1;
       height: auto;
     }
-    .ha-block--logo     { order: 1; }
-    .ha-block--identity { order: 2; }
+    .ha-identity-group  { order: 1; width: 100%; }
     .ha-block--photo    { order: 3; }
-    .ha-block--cta      { order: 4; }
+    .ha-block--cta      { order: 4; margin-top: 1rem; }
     .ha-block--photo .ha-photo-wrap { height: 100%; }
     .ha-cabinet-photo { height: 100%; min-height: unset; border-radius: 0.875rem; }
     .ha-photo-badge { width: 5.5rem; height: 5.5rem; top: -2rem; right: -0.75rem; }
     .ha-photo-badge--bl { top: auto; right: auto; bottom: -1rem; left: -0.75rem; }
     .ha-logo { width: min(360px, 90vw); }
 
-    /* Version B : CTA en premier, logo en dessous */
-    .hero-version--b .ha-block--cta { order: 0; }
-    .hero-version--b .ha-block--logo { order: 1; }
-    .hero-version--b .ha-block--identity { order: 2; }
-    .hero-version--b .ha-block--photo { order: 3; }
+    /* Version B : CTA en premier, groupe identité en dessous */
+    .hero-version--b .ha-block--cta      { order: 0; }
+    .hero-version--b .ha-identity-group  { order: 1; }
+    .hero-version--b .ha-block--photo    { order: 3; }
 
     /* Version C : identité + photo remontées, RDV avant ouverture */
     .hero-version--c .ha-layout { gap: 1rem; padding-top: 3rem; }
