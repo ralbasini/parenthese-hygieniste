@@ -1,3 +1,6 @@
+// ── Fix hero height on mobile: capture once at load so browser chrome show/hide doesn't resize the hero
+document.documentElement.style.setProperty('--hero-h', window.innerHeight + 'px')
+
 // ── Access gate
 const gate      = document.getElementById('access-gate')
 const gateInput = document.getElementById('gate-input')
