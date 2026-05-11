@@ -469,7 +469,7 @@
     font-family: 'Tan Mon Cheri', Georgia, serif;
     font-size: clamp(0.875rem, 1.8vw, 1.2rem);
     font-weight: 400;
-    color: var(--brand-purple);
+    color: #B5784F;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     line-height: 1.2;
@@ -627,7 +627,7 @@
     .hero-a {
       height: 90vh;
       height: 90svh;
-      height: var(--hero-h, 90svh);
+      height: calc(var(--hero-h, 90svh) - env(safe-area-inset-bottom, 0px));
       overflow: hidden;
       padding: 5rem 1.5rem max(3rem, calc(env(safe-area-inset-bottom, 0px) + 1.5rem));
       align-items: stretch;
