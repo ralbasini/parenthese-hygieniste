@@ -570,10 +570,10 @@
 
   .ha-photo-badge {
     position: absolute;
-    top: -1rem;
-    right: -1rem;
-    width: 5rem;
-    height: 5rem;
+    top: -1.25rem;
+    right: -1.25rem;
+    width: 7rem;
+    height: 7rem;
     background-color: white;
     border-radius: 50%;
     border: 1px solid rgba(160, 92, 59, 0.4);
@@ -620,7 +620,7 @@
     .ha-block--cta      { order: 4; }
     .ha-block--photo .ha-photo-wrap { height: 100%; }
     .ha-cabinet-photo { height: 100%; min-height: unset; border-radius: 0.875rem; }
-    .ha-photo-badge { width: 3.5rem; height: 3.5rem; top: -0.5rem; right: -0.5rem; }
+    .ha-photo-badge { width: 5.5rem; height: 5.5rem; top: -2rem; right: -0.75rem; }
     .ha-logo { width: min(360px, 90vw); }
   }
 
@@ -951,6 +951,20 @@
    PROTOCOLES
    ================================================================ */
 @layer components {
+  .section-tooth-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .section-tooth-logo img {
+    width: 8rem;
+    height: auto;
+    border: 1.5px solid rgba(160, 92, 59, 0.3);
+    border-radius: 50%;
+    padding: 0.75rem;
+    background-color: white;
+  }
+
   /* ── Grid — 2 columns */
   .protocols-grid {
     display: grid;
