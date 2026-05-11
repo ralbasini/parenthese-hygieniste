@@ -477,9 +477,11 @@
 
   .ha-role {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-style: normal;
-    color: #A05C3B;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5C3A28;
     margin-top: 0.3rem;
   }
 
