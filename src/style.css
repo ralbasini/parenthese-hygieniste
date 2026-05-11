@@ -627,7 +627,7 @@
       height: 100svh;
       height: var(--hero-h, 100svh);
       overflow: hidden;
-      padding: 5rem 1.5rem 1.5rem;
+      padding: 5rem 1.5rem max(3rem, calc(env(safe-area-inset-bottom, 0px) + 1.5rem));
       align-items: stretch;
     }
     .ha-layout {

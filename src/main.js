@@ -1,8 +1,8 @@
 // ── Hero height: use visualViewport to get the real visible height on iOS Safari.
 // Set once at load, update only on orientation change (never on scroll).
 function setHeroHeight () {
-  const h = (window.visualViewport?.height ?? window.innerHeight) + 'px'
-  document.documentElement.style.setProperty('--hero-h', h)
+  const raw = window.visualViewport?.height ?? window.innerHeight
+  document.documentElement.style.setProperty('--hero-h', raw + 'px')
 }
 setHeroHeight()
 window.addEventListener('orientationchange', () => setTimeout(setHeroHeight, 200))
