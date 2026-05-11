@@ -779,7 +779,15 @@
   .apropos-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 2rem;
+  }
+
+  .apropos-bio,
+  .credentials {
+    border-radius: 1.25rem;
+    border: 1px solid #EDE4D8;
+    padding: 2rem;
+    background: white;
   }
 
   @media (min-width: 768px) {
@@ -850,9 +858,6 @@
   }
 
   /* Timeline */
-  .credentials {
-    padding-top: 0.25rem;
-  }
 
   .credentials-title {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
@@ -1327,6 +1332,13 @@
     font-weight: 300;
     color: #A05C3B;
     opacity: 0.75;
+  }
+
+  .contact-info-wrap {
+    border-radius: 1.25rem;
+    border: 1px solid #EDE4D8;
+    padding: 2rem;
+    background: white;
   }
 
   .contact-map-wrap {
