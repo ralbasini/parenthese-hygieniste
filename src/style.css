@@ -616,7 +616,6 @@
     .hero-a {
       height: 100vh;
       height: 100svh;
-      height: var(--hero-h, 100svh);
       overflow: hidden;
       padding: 5rem 1.5rem 1.5rem;
       align-items: stretch;
