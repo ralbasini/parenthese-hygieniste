@@ -621,7 +621,43 @@
     .ha-block--photo .ha-photo-wrap { height: 100%; }
     .ha-cabinet-photo { height: 100%; min-height: unset; border-radius: 0.875rem; }
     .ha-photo-badge { width: 5.5rem; height: 5.5rem; top: -2rem; right: -0.75rem; }
+    .ha-photo-badge--bl { top: auto; right: auto; bottom: -1rem; left: -0.75rem; }
     .ha-logo { width: min(360px, 90vw); }
+
+    /* Version B : CTA en premier, logo en dessous */
+    .hero-version--b .ha-block--cta { order: 0; }
+    .hero-version--b .ha-block--logo { order: 1; }
+    .hero-version--b .ha-block--identity { order: 2; }
+    .hero-version--b .ha-block--photo { order: 3; }
+
+    /* Version C : identité + photo remontées, RDV avant ouverture */
+    .hero-version--c .ha-layout { gap: 1rem; padding-top: 3rem; }
+
+    /* Badges de version */
+    .hero-version--b,
+    .hero-version--c { display: flex; }
+  }
+
+  /* Versions B/C cachées sur desktop */
+  @media (min-width: 768px) {
+    .hero-version--b,
+    .hero-version--c { display: none; }
+    .hero-version-badge { display: none; }
+  }
+
+  .hero-version-badge {
+    position: absolute;
+    top: 4.5rem;
+    left: 1rem;
+    z-index: 10;
+    background: var(--brand-purple);
+    color: white;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 0.4rem;
   }
 
 }
