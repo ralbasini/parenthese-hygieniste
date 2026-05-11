@@ -469,7 +469,7 @@
     font-family: 'Tan Mon Cheri', Georgia, serif;
     font-size: clamp(0.875rem, 1.8vw, 1.2rem);
     font-weight: 400;
-    color: #5C3A28;
+    color: var(--brand-purple);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     line-height: 1.2;
