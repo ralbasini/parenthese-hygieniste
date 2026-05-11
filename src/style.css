@@ -613,6 +613,15 @@
     .nav-container {
       grid-template-columns: 1fr auto;
     }
+    html {
+      scroll-snap-type: y proximity;
+    }
+
+    #hero {
+      scroll-snap-align: start;
+      scroll-snap-stop: normal;
+    }
+
     .hero-a {
       height: 100vh;
       height: 100svh;
