@@ -2,7 +2,7 @@
 // Set once at load, update only on orientation change (never on scroll).
 function setHeroHeight () {
   const raw = window.visualViewport?.height ?? window.innerHeight
-  document.documentElement.style.setProperty('--hero-h', (raw * 0.95) + 'px')
+  document.documentElement.style.setProperty('--hero-h', (raw * 0.90) + 'px')
 }
 setHeroHeight()
 window.addEventListener('orientationchange', () => setTimeout(setHeroHeight, 200))
