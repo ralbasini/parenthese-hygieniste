@@ -503,7 +503,7 @@
     min-height: 100vh;
     overflow: hidden;
     position: relative;
-    background-color: #EAE8E5;
+    background: linear-gradient(145deg, #F5F1EC 0%, #EAE8E5 45%, #DDD3C3 100%);
     display: flex;
     align-items: center;
     justify-content: center;
