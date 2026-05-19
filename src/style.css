@@ -138,7 +138,7 @@
 
 @font-face {
   font-family: 'TT Chocolates';
-  src: url('/assets/fonts/TTChocolates-Regular.woff2') format('woff2');
+  src: url('/assets/fonts/TTChocolates-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -756,7 +756,7 @@
 
   .ornament-paren {
     display: block;
-    font-family: 'Tan Mon Cheri', Georgia, serif;
+    font-family: 'Bellota', cursive;
     font-size: 2rem;
     line-height: 1;
     color: #C4956A;
@@ -765,6 +765,14 @@
     user-select: none;
     letter-spacing: -0.05em;
     margin: 1.5rem 0;
+  }
+
+  .ornament-paren--open {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+  }
+
+  .ornament-paren--close {
+    font-family: 'Bellota', cursive;
   }
 }
 

@@ -43,7 +43,9 @@
       "Bash(cp \"C:\\\\Users\\\\user\\\\Téléchargements\\\\tan-mon-cheri-regular.otf\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\fonts\\\\TanMonCheri.otf\" && echo \"Copied\")",
       "Bash(cp \"C:/Users/user/Downloads/TAN-MON CHERI-Regular.otf\" \"C:/Users/user/OneDrive/Projet/parenthese-hygieniste/parenthese-hygieniste/public/assets/fonts/TanMonCheri.otf\" && echo \"Copied\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/assets/fonts/TanMonCheri.otf)",
-      "Bash(cp \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\cabinet-fake.jpg\" \"c:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\cabinet.jpg\")"
+      "Bash(cp \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\cabinet-fake.jpg\" \"c:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\cabinet.jpg\")",
+      "Bash(copy \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\fonts\\\\TT Chocolates Trial Regular.otf\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\fonts\\\\TTChocolates-Regular.otf\")",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\fonts\\\\TT Chocolates Trial Regular.otf\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\fonts\\\\TTChocolates-Regular.otf\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets",
