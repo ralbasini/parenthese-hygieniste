@@ -142,6 +142,8 @@ const MAP_STYLES = [
   { elementType: 'labels.text.stroke',                   stylers: [{ color: '#ffffff' }] },
   { featureType: 'administrative',       elementType: 'geometry.stroke',     stylers: [{ color: '#d4bfaa' }] },
   { featureType: 'landscape',            elementType: 'geometry',            stylers: [{ color: '#ffffff' }] },
+  { featureType: 'landscape.man_made',   elementType: 'geometry.fill',       stylers: [{ color: '#eeeeee' }] },
+  { featureType: 'landscape.man_made',   elementType: 'geometry.stroke',     stylers: [{ color: '#8a5c35' }] },
   { featureType: 'poi',                  elementType: 'geometry',            stylers: [{ color: '#f0ebe4' }] },
   { featureType: 'poi',                  elementType: 'labels',              stylers: [{ visibility: 'off' }] },
   { featureType: 'poi.park',             elementType: 'geometry.fill',       stylers: [{ color: '#e8e0d0' }] },
@@ -163,7 +165,7 @@ window.initCabinetMap = function () {
 
   const map = new google.maps.Map(mapEl, {
     center: { lat: 46.2353, lng: 7.5168 },
-    zoom: 16,
+    zoom: 17,
     styles: MAP_STYLES,
     mapTypeControl: false,
     streetViewControl: false,
