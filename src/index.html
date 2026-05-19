@@ -560,14 +560,7 @@
 
         <!-- Plan / Carte -->
         <div class="contact-map-wrap fade-in delay-2">
-          <iframe
-            class="map-iframe"
-            src="https://maps.google.com/maps?q=Rue+de+Pramagnon+54,+3979+Gr%C3%B4ne,+Valais,+Switzerland&hl=fr&z=16&output=embed"
-            title="Cabinet Parenthèse Hygiéniste — Rue de Pramagnon 54, Grône"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <div id="cabinet-map" class="map-iframe"></div>
           <div class="map-address">
             <p>Rue de Pramagnon 54</p>
             <p>3979 Grône, Valais</p>
@@ -824,5 +817,10 @@
 
 
   <script type="module" src="./main.js"></script>
+
+  <!-- Google Maps JS API — remplacez VOTRE_CLÉ_API par votre clé -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADt9iaoaRQwhTIMqA6984dYAu7bFF1q9U&callback=initCabinetMap&loading=async">
+  </script>
 </body>
 </html>

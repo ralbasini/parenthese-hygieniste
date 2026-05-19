@@ -134,3 +134,64 @@ if (heroBg) {
     heroBg.style.transform = `translateY(${offset}px)`
   }, { passive: true })
 }
+
+// ── Google Maps — style crème/brun assorti au site
+const MAP_STYLES = [
+  { elementType: 'geometry',                              stylers: [{ color: '#ffffff' }] },
+  { elementType: 'labels.text.fill',                     stylers: [{ color: '#7a5c48' }] },
+  { elementType: 'labels.text.stroke',                   stylers: [{ color: '#ffffff' }] },
+  { featureType: 'administrative',       elementType: 'geometry.stroke',     stylers: [{ color: '#d4bfaa' }] },
+  { featureType: 'landscape',            elementType: 'geometry',            stylers: [{ color: '#ffffff' }] },
+  { featureType: 'poi',                  elementType: 'geometry',            stylers: [{ color: '#f0ebe4' }] },
+  { featureType: 'poi',                  elementType: 'labels',              stylers: [{ visibility: 'off' }] },
+  { featureType: 'poi.park',             elementType: 'geometry.fill',       stylers: [{ color: '#e8e0d0' }] },
+  { featureType: 'road',                 elementType: 'geometry',            stylers: [{ color: '#d4b896' }] },
+  { featureType: 'road',                 elementType: 'geometry.stroke',     stylers: [{ color: '#c9a882' }] },
+  { featureType: 'road',                 elementType: 'labels.text.fill',    stylers: [{ color: '#9a7a62' }] },
+  { featureType: 'road.local',           elementType: 'geometry',            stylers: [{ color: '#e8d8c4' }] },
+  { featureType: 'road.highway',         elementType: 'geometry',            stylers: [{ color: '#c9a882' }] },
+  { featureType: 'road.highway',         elementType: 'geometry.stroke',     stylers: [{ color: '#b89070' }] },
+  { featureType: 'transit',              elementType: 'geometry',            stylers: [{ color: '#e8e0d4' }] },
+  { featureType: 'transit',              elementType: 'labels',              stylers: [{ visibility: 'off' }] },
+  { featureType: 'water',                elementType: 'geometry.fill',       stylers: [{ color: '#dde8e4' }] },
+  { featureType: 'water',                elementType: 'labels.text.fill',    stylers: [{ color: '#8aaa9a' }] },
+]
+
+window.initCabinetMap = function () {
+  const mapEl = document.getElementById('cabinet-map')
+  if (!mapEl) return
+
+  const map = new google.maps.Map(mapEl, {
+    center: { lat: 46.2353, lng: 7.5168 },
+    zoom: 16,
+    styles: MAP_STYLES,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: false,
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER,
+    },
+  })
+
+  const geocoder = new google.maps.Geocoder()
+  geocoder.geocode({ address: 'Rue de Pramagnon 54, 3979 Grône, Valais, Suisse' }, (results, status) => {
+    if (status === 'OK' && results[0]) {
+      const position = results[0].geometry.location
+      map.setCenter(position)
+      new google.maps.Marker({
+        position,
+        map,
+        title: 'Cabinet Parenthèse Hygiéniste',
+        icon: {
+          path: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
+          fillColor: '#8B7EC8',
+          fillOpacity: 1,
+          strokeColor: '#6B5EA8',
+          strokeWeight: 1,
+          scale: 1.4,
+          anchor: new google.maps.Point(12, 22),
+        },
+      })
+    }
+  })
+}
