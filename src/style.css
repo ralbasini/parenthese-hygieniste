@@ -504,39 +504,15 @@
     text-transform: uppercase;
     color: #5C3A28;
     background-color: transparent;
-    border: 1.5px solid #B5784F;
+    border: 1.5px solid var(--brand-purple);
     border-radius: 0.875rem;
     text-decoration: none;
     transition: background-color 0.25s, color 0.25s;
   }
 
-  .hp-cta svg { display: none; }
-
   .hp-cta:hover {
-    background-color: #B5784F;
+    background-color: var(--brand-purple);
     color: white;
-  }
-
-  @media (min-width: 768px) {
-    .hp-cta {
-      gap: 0.6rem;
-      color: white;
-      background-color: var(--brand-purple);
-      border-color: transparent;
-      transition: background-color 0.25s;
-    }
-    .hp-cta:hover {
-      background-color: #4E2F5A;
-      color: white;
-    }
-    .hp-cta svg {
-      width: 0.9rem;
-      height: 0.9rem;
-      transition: transform 0.3s;
-    }
-    .hp-cta:hover svg {
-      transform: translateX(3px);
-    }
   }
 
   /* ── Hero */
