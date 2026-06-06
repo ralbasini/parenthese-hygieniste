@@ -504,7 +504,7 @@
     text-transform: uppercase;
     color: #5C3A28;
     background-color: transparent;
-    border: 1.5px solid var(--brand-purple);
+    border: 1.5px solid #B5784F;
     border-radius: 0.875rem;
     text-decoration: none;
     transition: background-color 0.25s, color 0.25s;
