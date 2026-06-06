@@ -510,9 +510,33 @@
     transition: background-color 0.25s, color 0.25s;
   }
 
+  .hp-cta svg { display: none; }
+
   .hp-cta:hover {
     background-color: #B5784F;
     color: white;
+  }
+
+  @media (min-width: 768px) {
+    .hp-cta {
+      gap: 0.6rem;
+      color: white;
+      background-color: var(--brand-purple);
+      border-color: transparent;
+      transition: background-color 0.25s;
+    }
+    .hp-cta:hover {
+      background-color: #4E2F5A;
+      color: white;
+    }
+    .hp-cta svg {
+      width: 0.9rem;
+      height: 0.9rem;
+      transition: transform 0.3s;
+    }
+    .hp-cta:hover svg {
+      transform: translateX(3px);
+    }
   }
 
   /* ── Hero */
