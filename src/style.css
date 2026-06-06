@@ -587,6 +587,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 1.125rem;
+    border: 1px solid rgba(181, 120, 79, 0.35);
     display: block;
   }
 
@@ -595,6 +596,7 @@
     top: -1.25rem;
     right: -1.25rem;
     width: 5.5rem;
+    border: 1px solid rgba(181, 120, 79, 0.35);
     height: 5.5rem;
     border-radius: 50%;
     display: flex;
@@ -1241,6 +1243,13 @@
 
   .contact-block {
     margin-bottom: 2.75rem;
+  }
+
+  .contact-block--featured {
+    border: 1px solid var(--brand-purple);
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(111, 67, 126, 0.04);
   }
 
   .contact-item {
