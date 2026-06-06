@@ -69,7 +69,7 @@ function updateNavbar () {
   const scrollY = window.scrollY
 
   // Background
-  navbar.classList.toggle('scrolled', scrollY > 60)
+  navbar.classList.toggle('scrolled', scrollY > 20)
 
   // Active section highlight
   let currentId = ''

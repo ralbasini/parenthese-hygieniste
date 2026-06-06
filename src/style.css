@@ -758,11 +758,11 @@
 
   .ornament-paren {
     display: block;
-    font-family: 'Bellota', cursive;
+    font-family: 'Tan Mon Cheri', Georgia, serif;
     font-size: 2rem;
     line-height: 1;
-    color: #C4956A;
-    opacity: 0.55;
+    color: var(--brand-purple);
+    opacity: 0.85;
     text-align: center;
     user-select: none;
     letter-spacing: -0.05em;
@@ -770,11 +770,11 @@
   }
 
   .ornament-paren--open {
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-family: 'Tan Mon Cheri', Georgia, serif;
   }
 
   .ornament-paren--close {
-    font-family: 'Bellota', cursive;
+    font-family: 'Tan Mon Cheri', Georgia, serif;
   }
 }
 
@@ -1264,6 +1264,12 @@
     font-weight: 400;
     color: #5C3A28;
     display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.contact-label:hover {
+    color: var(--brand-purple);
   }
 
   .contact-note {
