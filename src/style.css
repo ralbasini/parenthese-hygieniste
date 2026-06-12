@@ -667,48 +667,6 @@
   .section-white { background-color: #FFFFFF; position: relative; }
   .section-beige { background-color: #D9D5CF; position: relative; }
 
-  .scribble {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    color: #A05C3B;
-    opacity: 0.28;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .scribble svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .scribble-top    { top: -80px; }
-  .scribble-mid    { top: 30%; }
-  .scribble-bot    { bottom: -240px; }
-  .scribble-center { top: 50%; transform: translateY(-50%); }
-
-  @media (max-width: 767px) {
-    .scribble { display: none; }
-  }
-
-  .scribble-fill {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    color: #A05C3B;
-    opacity: 0.22;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .scribble-fill svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
   .section-inner {
     position: relative;
     z-index: 2;
@@ -793,7 +751,7 @@
 
   .philosophie-quote {
     font-family: 'Bellota', Georgia, serif;
-    font-size: clamp(1rem, 1.3vw, 1.4rem);
+    font-size: 1.0625rem;
     font-weight: 400;
     color: #A05C3B;
     text-align: center;
