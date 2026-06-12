@@ -54,12 +54,6 @@ const revealObserver = new IntersectionObserver(
 )
 revealEls.forEach((el) => revealObserver.observe(el))
 
-// Trigger hero elements immediately (above the fold)
-const heroEls = document.querySelectorAll('.hero-content .fade-in')
-heroEls.forEach((el, i) => {
-  setTimeout(() => el.classList.add('visible'), 300 + i * 160)
-})
-
 // ── Navbar: translucent → white on scroll + active link tracking
 const navbar     = document.getElementById('navbar')
 const sections   = Array.from(document.querySelectorAll('section[id]'))
@@ -125,15 +119,6 @@ document.querySelectorAll('.protocol-card').forEach(card => {
     btn.textContent = isOpen ? 'Fermer' : 'Plus d\'information'
   })
 })
-
-// ── Subtle parallax on hero background
-const heroBg = document.querySelector('.hero-bg')
-if (heroBg) {
-  window.addEventListener('scroll', () => {
-    const offset = window.scrollY * 0.3
-    heroBg.style.transform = `translateY(${offset}px)`
-  }, { passive: true })
-}
 
 // ── Google Maps — style crème/brun assorti au site
 const MAP_STYLES = [

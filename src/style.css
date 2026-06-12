@@ -667,9 +667,6 @@
   .section-white { background-color: #FFFFFF; position: relative; }
   .section-beige { background-color: #D9D5CF; position: relative; }
 
-  .scribble,
-  .scribble-fill { display: none; }
-
   .scribble {
     position: absolute;
     left: 0;
@@ -692,15 +689,13 @@
   .scribble-center { top: 50%; transform: translateY(-50%); }
 
   @media (max-width: 767px) {
-    .scribble,
-    .scribble-fill { display: none; }
+    .scribble { display: none; }
   }
 
   .scribble-fill {
     position: absolute;
     inset: 0;
     width: 100%;
-    z-index: 1;
     height: 100%;
     color: #A05C3B;
     opacity: 0.22;
@@ -775,13 +770,6 @@
     margin: 1.5rem 0;
   }
 
-  .ornament-paren--open {
-    font-family: 'Tan Mon Cheri', Georgia, serif;
-  }
-
-  .ornament-paren--close {
-    font-family: 'Tan Mon Cheri', Georgia, serif;
-  }
 }
 
 /* ================================================================
@@ -805,7 +793,7 @@
 
   .philosophie-quote {
     font-family: 'Bellota', Georgia, serif;
-    font-size: clamp(1.3rem, 1.3vw, 1.2rem);;
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
     font-weight: 400;
     color: #A05C3B;
     text-align: center;
@@ -1408,14 +1396,6 @@
     transform: translateX(3px);
   }
 
-  .cancellation-note {
-    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: #A05C3B;
-    opacity: 0.75;
-  }
-
   .contact-info-wrap {
     border-radius: 1.25rem;
     border: 1px solid #EDE4D8;
@@ -1546,8 +1526,6 @@
   }
   .collab-detail-item .contact-icon {
     color: var(--brand-purple);
-  }
-  .collab-detail-item .contact-icon {
     margin-top: 0;
   }
   .collab-detail-text {
