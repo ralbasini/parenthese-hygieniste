@@ -54,7 +54,7 @@
 
 .gate-label {
   font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--brand-purple);
@@ -86,7 +86,7 @@
 
 .gate-error {
   font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: #A05C3B;
   min-height: 1.25rem;
   opacity: 0;
@@ -348,7 +348,7 @@
     display: inline-flex;
     align-items: center;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #A05C3B;
@@ -447,7 +447,7 @@
     color: white;
     text-transform: uppercase;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.07em;
     border-radius: 0.875rem;
     text-decoration: none;
@@ -499,7 +499,7 @@
     align-items: center;
     padding: 0.75rem 2rem;
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #5C3A28;
@@ -728,7 +728,7 @@
 
   .section-label {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -795,7 +795,7 @@
 
   .philosophie-body {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 300;
     line-height: 1.85;
     color: #5C3A28;
@@ -906,7 +906,7 @@
 
   .credentials-title {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.17em;
     text-transform: uppercase;
@@ -1070,7 +1070,7 @@
   }
   .protocol-details p {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8375rem;
+    font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.7;
     color: #7A5C46;
@@ -1094,7 +1094,7 @@
   }
   .protocol-list li {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8375rem;
+    font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.7;
     color: #7A5C46;
@@ -1143,7 +1143,7 @@
 
   .protocol-desc {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.72;
     color: #A05C3B;
@@ -1246,7 +1246,7 @@
 
   .contact-section-title {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.17em;
     text-transform: uppercase;
@@ -1296,7 +1296,7 @@
 
   .contact-note {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 300;
     color: #A05C3B;
     font-style: italic;
@@ -1311,7 +1311,7 @@
 
   .hours-table td {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 300;
     padding: 0.6875rem 0;
     border-bottom: 1px solid #EDE4D8;
@@ -1336,7 +1336,7 @@
 
   .access-list li {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 300;
     color: #5C3A28;
     padding-left: 1.125rem;
@@ -1346,7 +1346,7 @@
 
   .access-note {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 300;
     font-style: italic;
     color: #A05C3B;
@@ -1356,7 +1356,7 @@
 
   .cancellation-note {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-weight: 400;
     font-style: normal;
     color: #5C3A1E;
@@ -1410,7 +1410,7 @@
 
   .cancellation-note {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 300;
     color: #A05C3B;
     opacity: 0.75;
@@ -1503,7 +1503,7 @@
 
   .collab-domain {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -1552,7 +1552,7 @@
   }
   .collab-detail-text {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     font-weight: 300;
     color: #7A5C46;
     line-height: 1.5;
@@ -1593,7 +1593,7 @@
 
   .collab-location {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 300;
     color: #A05C3B;
     opacity: 0.75;
@@ -1666,7 +1666,7 @@
 
   .footer-author {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 300;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.38);
@@ -1711,14 +1711,14 @@
 
   .footer-copy {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.3);
   }
 
   .back-to-top {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 300;
     letter-spacing: 0.06em;
     color: rgba(255, 255, 255, 0.45);
