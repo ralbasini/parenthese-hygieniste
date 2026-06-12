@@ -175,6 +175,17 @@ window.initCabinetMap = function () {
     },
   })
 
+  // On mobile the container may be invisible (fade-in) when Maps first renders,
+  // causing a blank tile area. Trigger resize once it becomes visible.
+  const resizeObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      google.maps.event.trigger(map, 'resize')
+      map.setCenter(map.getCenter())
+      resizeObserver.disconnect()
+    }
+  }, { threshold: 0.1 })
+  resizeObserver.observe(mapEl)
+
   const geocoder = new google.maps.Geocoder()
   geocoder.geocode({ address: 'Rue de Pramagnon 54, 3979 Grône, Valais, Suisse' }, (results, status) => {
     if (status === 'OK' && results[0]) {
