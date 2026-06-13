@@ -55,7 +55,10 @@
       "Bash(identify \"C:/Users/user/OneDrive/Projet/parenthese-hygieniste/resources/Logo Dent brun fond blanc - bold.png\")",
       "Bash(exiftool -ImageSize \"C:/Users/user/OneDrive/Projet/parenthese-hygieniste/resources/Logo Dent brun fond blanc - bold.png\")",
       "Bash(convert --version)",
-      "Bash(magick --version)"
+      "Bash(magick --version)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(node -e \"require\\('jimp'\\)\")",
+      "Bash(npm list *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets",
