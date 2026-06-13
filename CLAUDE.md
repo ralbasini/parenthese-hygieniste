@@ -13,7 +13,7 @@
 
 **Border radius:** all buttons use `0.875rem` — matches the rounded rectangle of the logo shape. Never use pill (`100px`).
 
-**Colours:** brown is dominant. Purple (`#8B7EC8`, `--brand-purple`) is a discrete accent only — applied to: ornamental `( )` parenthèses, nav active underline, scroll indicator, timeline years, list bullet dots, protocol card icons, gate label. No pink/magenta anywhere.
+**Colours:** brown is dominant. Purple (`#8B7EC8`, `--brand-purple`) is a discrete accent only — applied to: ornamental `( )` parenthèses, nav active underline, scroll indicator, timeline years, list bullet dots, protocol card icons. No pink/magenta anywhere.
 
 **Navbar has two states:**
 - Transparent (over hero): white links, white hamburger, "Rendez-vous" = white bg + purple text.
@@ -22,14 +22,6 @@
 **Hero overlay** is intentionally light (`0.72 / 0.62 / 0.55` opacity) so the toothbrush photo shows through. Don't darken it.
 
 **Hero parallax:** driven frame-by-frame by scroll JS — no CSS `transition` on `.hero-bg`, or returning to top takes 12s.
-
----
-
-## Access Gate
-
-- Code: `3979` (Grône postal code). Stored in `sessionStorage`.
-- Input must be `type="text"` with `inputmode="numeric"` — **never `type="password"`**: browser password managers on HTTPS intercept the value and the code never matches.
-- JS strips non-digits before comparing: `value.replace(/\D/g, '').slice(0, 4)`.
 
 ---
 

@@ -7,38 +7,6 @@ function setHeroHeight () {
 setHeroHeight()
 window.addEventListener('orientationchange', () => setTimeout(setHeroHeight, 200))
 
-// ── Access gate
-const gate      = document.getElementById('access-gate')
-const gateInput = document.getElementById('gate-input')
-const gateError = document.getElementById('gate-error')
-const CODE      = '3979'
-const STORE_KEY = 'ph_unlocked'
-
-function unlock () {
-  sessionStorage.setItem(STORE_KEY, '1')
-  gate.classList.add('unlocked')
-  gate.addEventListener('transitionend', () => gate.remove(), { once: true })
-}
-
-if (sessionStorage.getItem(STORE_KEY) === '1') {
-  gate.remove()
-} else {
-  gateInput.focus()
-  gateInput.addEventListener('input', () => {
-    gateError.classList.remove('visible')
-    if (gateInput.value.length === 4) {
-      if (gateInput.value === CODE) {
-        unlock()
-      } else {
-        gateError.textContent = 'Code incorrect — réessayez.'
-        gateError.classList.add('visible')
-        gateInput.value = ''
-        gateInput.focus()
-      }
-    }
-  })
-}
-
 // ── Scroll-reveal animations via Intersection Observer
 const revealEls = document.querySelectorAll('.fade-in')
 const revealObserver = new IntersectionObserver(
