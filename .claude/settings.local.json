@@ -50,7 +50,12 @@
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\user\\\\Downloads\" | Where-Object { $_.Name -match \"photo\" })",
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\" -Recurse | Where-Object { $_.Name -match \"photo\" })",
       "PowerShell(Copy-Item \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\photo-bad.jpg\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\photo-bad.jpg\")",
-      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\photo-bad.jpg\"\\); \"$\\($img.Width\\) x $\\($img.Height\\)\"; $img.Dispose\\(\\))"
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\photo-bad.jpg\"\\); \"$\\($img.Width\\) x $\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "Bash(python3 -c ' *)",
+      "Bash(identify \"C:/Users/user/OneDrive/Projet/parenthese-hygieniste/resources/Logo Dent brun fond blanc - bold.png\")",
+      "Bash(exiftool -ImageSize \"C:/Users/user/OneDrive/Projet/parenthese-hygieniste/resources/Logo Dent brun fond blanc - bold.png\")",
+      "Bash(convert --version)",
+      "Bash(magick --version)"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets",
