@@ -1303,9 +1303,10 @@
   .cancellation-note {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-    color: #5C3A1E;
+    color: #5C3A28;
+    line-height: 1.6;
     margin-bottom: 0;
   }
 
@@ -1327,7 +1328,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.9375rem 2.25rem;
+    padding: 0.9375rem 1.25rem;
     background-color: var(--brand-purple);
     color: white;
     border-radius: 0.875rem;
@@ -1353,6 +1354,95 @@
   .btn-rdv:hover svg {
     transform: translateX(3px);
   }
+
+  /* ── RDV Modal */
+  .rdv-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 599px) {
+    .rdv-modal {
+      align-items: flex-start;
+      padding-top: 1.25rem;
+    }
+  }
+
+  .rdv-modal[hidden] { display: none; }
+
+  .rdv-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(50, 28, 16, 0.45);
+    backdrop-filter: blur(3px);
+  }
+
+  .rdv-modal-box {
+    position: relative;
+    background: #FDF8F3;
+    border-radius: 1.25rem;
+    padding: 2.25rem 2rem;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 24px 60px rgba(50, 28, 16, 0.18);
+    animation: modal-in 0.22s ease;
+  }
+
+  @keyframes modal-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)   scale(1); }
+  }
+
+  .rdv-modal-title {
+    font-family: 'Bellota', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    color: #5C3A28;
+    line-height: 1.12;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .rdv-modal-section {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #EDE4D8;
+  }
+
+  .rdv-modal-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .rdv-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .rdv-modal-cancel {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    color: #A05C3B;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .rdv-modal-cancel:hover { opacity: 1; }
+
+  .rdv-modal-continue { margin-top: 0; margin-bottom: 0; }
 
   .contact-info-wrap {
     border-radius: 1.25rem;

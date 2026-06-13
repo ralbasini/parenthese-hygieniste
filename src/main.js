@@ -120,6 +120,20 @@ document.querySelectorAll('.protocol-card').forEach(card => {
   })
 })
 
+// ── RDV modal
+const rdvModal   = document.getElementById('rdv-modal')
+const rdvOpenBtn = document.getElementById('rdv-open-btn')
+const rdvClose   = document.getElementById('rdv-modal-close')
+const rdvOverlay = document.getElementById('rdv-modal-overlay')
+
+function openRdvModal ()  { rdvModal.hidden = false; document.body.style.overflow = 'hidden' }
+function closeRdvModal () { rdvModal.hidden = true;  document.body.style.overflow = '' }
+
+rdvOpenBtn.addEventListener('click', openRdvModal)
+rdvClose.addEventListener('click', closeRdvModal)
+rdvOverlay.addEventListener('click', closeRdvModal)
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeRdvModal() })
+
 // ── Google Maps — style crème/brun assorti au site
 const MAP_STYLES = [
   { elementType: 'geometry',                              stylers: [{ color: '#ffffff' }] },

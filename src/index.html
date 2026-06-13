@@ -293,7 +293,7 @@
   <!-- ══════════════════════════════════════════════════════════════
        CABINET
        ══════════════════════════════════════════════════════════════ -->
-  <section id="cabinet" class="section-beige">
+  <section id="cabinet" class="section-beige" style="display:none">
     <div class="section-inner">
 
       <p class="section-label fade-in">Cabinet</p>
@@ -557,7 +557,7 @@
 
       <div class="fade-in delay-3" style="text-align:center; margin-top:0; margin-bottom:3.5rem">
         <a href="https://booking.denteo.com/fr/9f84c0bdadfc2533fb5a04d007fa7882/" target="_blank" rel="noopener noreferrer" class="btn-rdv">
-          Rendez-vous<br class="btn-rdv-br"> en ligne
+          Prendre rendez-vous
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
           </svg>
@@ -625,12 +625,12 @@
           </div>
 
           <div class="fade-in delay-4" style="text-align:center; margin-top:0.5rem">
-            <a href="https://booking.denteo.com/fr/9f84c0bdadfc2533fb5a04d007fa7882/" target="_blank" rel="noopener noreferrer" class="btn-rdv">
-              Prendre rendez-vous en ligne
+            <button type="button" id="rdv-open-btn" class="btn-rdv">
+              Prendre rendez-vous
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
               </svg>
-            </a>
+            </button>
           </div>
 
         </div>
@@ -681,7 +681,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Rue de l'Avenir 5, 1950 Sion</span>
+              <span class="collab-detail-text">Rue de l'Avenir 5<br>1950 Sion</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -703,7 +703,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Place Praniviers 8, 3966 Réchy</span>
+              <span class="collab-detail-text">Place Praniviers 8<br>3966 Réchy</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -725,7 +725,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Rue Centrale 4, 3960 Sierre</span>
+              <span class="collab-detail-text">Rue Centrale 4<br>3960 Sierre</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -749,7 +749,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Rue Centrale 123, 3979 Grône</span>
+              <span class="collab-detail-text">Rue Centrale 123<br>3979 Grône</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -771,7 +771,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Rue d'Orzival 3, 3960 Sierre</span>
+              <span class="collab-detail-text">Rue d'Orzival 3<br>3960 Sierre</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -793,7 +793,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Route de Prejeux 43, 1950 Sion</span>
+              <span class="collab-detail-text">Route de Prejeux 43<br>1950 Sion</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -815,7 +815,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Rue Centrale 123, 3979 Grône</span>
+              <span class="collab-detail-text">Rue Centrale 123<br>3979 Grône</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -837,7 +837,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Chemin de l'ancien cimetière 2, 3960 Sierre</span>
+              <span class="collab-detail-text">Chemin de l'ancien cimetière 2<br>3960 Sierre</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -859,7 +859,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
               </svg>
-              <span class="collab-detail-text">Rue d'Orzival 3, 3960 Sierre</span>
+              <span class="collab-detail-text">Rue d'Orzival 3<br>3960 Sierre</span>
             </div>
             <div class="collab-detail-item">
               <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -914,6 +914,41 @@
     </div>
   </footer>
 
+
+  <!-- Modal — confirmation avant prise de rendez-vous -->
+  <div id="rdv-modal" class="rdv-modal" role="dialog" aria-modal="true" aria-labelledby="rdv-modal-title" hidden>
+    <div class="rdv-modal-overlay" id="rdv-modal-overlay"></div>
+    <div class="rdv-modal-box">
+      <h2 id="rdv-modal-title" class="rdv-modal-title">Avant de continuer...</h2>
+
+      <div class="rdv-modal-section">
+        <h3 class="contact-section-title">Règlement des soins</h3>
+        <p class="access-note">Le règlement peut être effectué à la fin de la séance&nbsp;:</p>
+        <ul class="access-list">
+          <li>Paiement comptant</li>
+          <li>Paiement par Twint <em>(un supplément peut s'appliquer)</em></li>
+          <li>Sur facture par e-mail</li>
+        </ul>
+      </div>
+
+      <div class="rdv-modal-section">
+        <h3 class="contact-section-title">Annulation des rendez-vous</h3>
+        <p class="cancellation-note">Tout rendez-vous non annulé au moins 48&nbsp;heures à l'avance pourra être facturé.</p>
+      </div>
+
+      <div class="rdv-modal-actions">
+        <button type="button" id="rdv-modal-close" class="rdv-modal-cancel">Annuler</button>
+        <a href="https://booking.denteo.com/fr/9f84c0bdadfc2533fb5a04d007fa7882/"
+           target="_blank" rel="noopener noreferrer"
+           id="rdv-modal-continue" class="btn-rdv rdv-modal-continue">
+          Continuer
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="./main.js"></script>
 
