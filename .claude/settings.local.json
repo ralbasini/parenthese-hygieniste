@@ -58,7 +58,8 @@
       "Bash(magick --version)",
       "Bash(node -e \"require\\('sharp'\\)\")",
       "Bash(node -e \"require\\('jimp'\\)\")",
-      "Bash(npm list *)"
+      "Bash(npm list *)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\photo-marine.jpeg\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\photo-marine.jpeg\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets",

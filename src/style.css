@@ -691,6 +691,33 @@
     }
   }
 
+  /* Photo Marine + Avec bienveillance */
+  .apropos-photo-closing {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .apropos-photo {
+    width: 100%;
+    border-radius: 0.875rem;
+  }
+
+  @media (min-width: 768px) {
+    .apropos-photo-closing {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+
+    .apropos-photo {
+      width: 60%;
+      flex-shrink: 0;
+    }
+  }
+
+
   .bio-text {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
     font-size: 1rem;
