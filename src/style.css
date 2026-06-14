@@ -408,11 +408,12 @@
     border: 1.5px solid #B5784F;
     border-radius: 0.875rem;
     text-decoration: none;
-    transition: background-color 0.25s, color 0.25s;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
   }
 
   .hp-cta:hover {
     background-color: var(--brand-purple);
+    border-color: var(--brand-purple);
     color: white;
   }
 
@@ -1344,6 +1345,54 @@
   .rdv-modal-cancel:hover { opacity: 1; }
 
   .rdv-modal-continue { margin-top: 0; margin-bottom: 0; }
+
+  /* -- Notice temporaire "dispo dès le 1er juillet" */
+  .rdv-modal-notice {
+    background: #F5EFE7;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+  }
+
+  .rdv-modal-notice-text {
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-style: normal;
+    color: #5C3A28;
+    line-height: 1.6;
+    margin: 0 0 0.6rem;
+  }
+
+  .rdv-modal-notice-text:last-of-type { margin-bottom: 0.75rem; }
+
+  .rdv-modal-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .rdv-modal-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'TT Chocolates', 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--brand-purple);
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #D9C9B6;
+    border-radius: 0.875rem;
+    padding: 0.45rem 1rem;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .rdv-modal-contact-link:hover {
+    background: #EDE4D8;
+    border-color: var(--brand-purple);
+  }
 
   .contact-info-wrap {
     border-radius: 1.25rem;
