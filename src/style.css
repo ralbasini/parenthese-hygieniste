@@ -1538,7 +1538,7 @@
     transition: max-height 0.4s ease, margin-top 0.4s ease, padding-top 0.4s ease, border-color 0.4s ease;
   }
   .collab-card.is-open .collab-details {
-    max-height: 120px;
+    max-height: 200px;
     margin-top: 0.5rem;
     padding-top: 0.625rem;
     border-color: #EDE4D8;
