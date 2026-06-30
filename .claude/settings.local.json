@@ -60,7 +60,8 @@
       "Bash(node -e \"require\\('jimp'\\)\")",
       "Bash(npm list *)",
       "PowerShell(Copy-Item \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\resources\\\\photo-marine.jpeg\" \"C:\\\\Users\\\\user\\\\OneDrive\\\\Projet\\\\parenthese-hygieniste\\\\parenthese-hygieniste\\\\public\\\\assets\\\\images\\\\photo-marine.jpeg\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "PowerShell(Start-Process \"http://localhost:5173/\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\user\\OneDrive\\Projet\\parenthese-hygieniste\\parenthese-hygieniste\\public\\assets",

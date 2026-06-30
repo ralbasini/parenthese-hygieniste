@@ -24,8 +24,9 @@ revealEls.forEach((el) => revealObserver.observe(el))
 
 // ── Navbar: translucent → white on scroll + active link tracking
 const navbar     = document.getElementById('navbar')
-const sections   = Array.from(document.querySelectorAll('section[id]'))
 const navLinks   = document.querySelectorAll('.nav-link')
+const navHrefs   = new Set(Array.from(navLinks).map(l => l.getAttribute('href').slice(1)))
+const sections   = Array.from(document.querySelectorAll('section[id]')).filter(s => navHrefs.has(s.id))
 
 function updateNavbar () {
   const scrollY = window.scrollY

@@ -117,6 +117,8 @@
   .delay-5 { transition-delay: 0.30s; }
   .delay-6 { transition-delay: 0.36s; }
   .delay-7 { transition-delay: 0.42s; }
+  .delay-8 { transition-delay: 0.48s; }
+  .delay-9 { transition-delay: 0.54s; }
 }
 
 /* ================================================================
@@ -1486,12 +1488,13 @@
     background: white;
     border: 1px solid rgba(237, 228, 216, 0.9);
     border-radius: 1rem;
-    padding: 1.5rem 1.375rem;
+    padding: 1.5rem 2rem 1.5rem 1.375rem;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto auto;
     column-gap: 0.75rem;
     row-gap: 0.35rem;
+    min-width: 0;
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
 
@@ -1503,8 +1506,8 @@
 
   .collab-domain,
   .collab-name,
-  .collab-location,
-  .collab-details { grid-column: 1; }
+  .collab-location { grid-column: 1; min-width: 0; }
+  .collab-details { grid-column: 1 / -1; min-width: 0; }
 
   .collab-domain {
     font-family: 'TT Chocolates', 'DM Sans', sans-serif;
@@ -1515,6 +1518,7 @@
     color: #A05C3B;
     opacity: 0.8;
     margin-bottom: 0.1rem;
+    white-space: nowrap;
   }
 
   .collab-name {
@@ -1562,7 +1566,7 @@
   }
   .collab-toggle {
     grid-column: 2;
-    grid-row: 1 / 4;
+    grid-row: 2;
     align-self: center;
     width: 1.625rem;
     height: 1.625rem;
@@ -1575,7 +1579,6 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.5s, border-color 0.5s, transform 0.3s;
-    flex-shrink: 0;
   }
   .collab-toggle::before {
     content: '+';
