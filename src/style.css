@@ -888,13 +888,13 @@
     aspect-ratio: 3 / 2; /* fallback ratio — first slide is landscape */
     margin: 2.5rem auto 0;
     background: #1a1a1a;
-    transition: width 0.4s ease, height 0.4s ease;
+    transition: width 0.65s cubic-bezier(0.65, 0, 0.35, 1), height 0.65s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .cabinet-carousel-track {
     display: flex;
     height: 100%;
-    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1);
     will-change: transform;
   }
 
