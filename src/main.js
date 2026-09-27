@@ -69,6 +69,121 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   })
 })
 
+// ── Cabinet carousel (infinite loop via cloned edge slides)
+;(function () {
+  const carousel = document.querySelector('.cabinet-carousel')
+  if (!carousel) return
+  const track = carousel.querySelector('.cabinet-carousel-track')
+  const dots  = carousel.querySelectorAll('.cabinet-carousel-dot')
+  const originalSlides = Array.from(carousel.querySelectorAll('.cabinet-carousel-slide'))
+  const total = originalSlides.length
+  if (total < 2) return
+
+  const firstClone = originalSlides[0].cloneNode(true)
+  const lastClone  = originalSlides[total - 1].cloneNode(true)
+  firstClone.setAttribute('aria-hidden', 'true')
+  lastClone.setAttribute('aria-hidden', 'true')
+  track.appendChild(firstClone)
+  track.insertBefore(lastClone, originalSlides[0])
+
+  // Native w/h ratio of each real photo, so the frame can match portrait or landscape shots without cropping
+  const ratios = originalSlides.map(img => Number(img.dataset.w) / Number(img.dataset.h))
+
+  // Extended track: [lastClone, slide0..slideN-1, firstClone] → real slides live at index 1..total
+  let current = 1
+  let timer
+
+  function realIndexOf(pos) {
+    return (pos - 1 + total) % total
+  }
+
+  function render() {
+    track.style.transform = `translateX(-${current * 100}%)`
+  }
+
+  function updateDots() {
+    const realIndex = realIndexOf(current)
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === realIndex))
+  }
+
+  const BASE_HEIGHT = 480 // target height (px) when there's room; width follows each photo's own ratio
+
+  function setSizeFor(pos, animate) {
+    const ratio = ratios[realIndexOf(pos)]
+    const parentStyle    = getComputedStyle(carousel.parentElement)
+    const availableWidth = carousel.parentElement.clientWidth
+      - parseFloat(parentStyle.paddingLeft) - parseFloat(parentStyle.paddingRight)
+
+    let width  = BASE_HEIGHT * ratio
+    let height = BASE_HEIGHT
+    if (width > availableWidth) {
+      width  = availableWidth
+      height = availableWidth / ratio
+    }
+
+    if (!animate) carousel.style.transition = 'none'
+    carousel.style.width  = `${width}px`
+    carousel.style.height = `${height}px`
+    if (!animate) {
+      carousel.offsetHeight // force reflow so the next transition re-applies
+      carousel.style.transition = ''
+    }
+  }
+
+  function jumpTo(index) {
+    track.style.transition = 'none'
+    current = index
+    render()
+    setSizeFor(current, false)
+    track.offsetHeight // force reflow so the next transition re-applies
+    track.style.transition = ''
+  }
+
+  jumpTo(1) // initial position, no animation
+
+  function goTo(index) {
+    current = index
+    render()
+    updateDots()
+    setSizeFor(current, true)
+  }
+
+  window.addEventListener('resize', () => setSizeFor(current, false))
+
+  track.addEventListener('transitionend', (e) => {
+    if (e.propertyName !== 'transform') return
+    if (current === 0) jumpTo(total)
+    else if (current === total + 1) jumpTo(1)
+  })
+
+  carousel.querySelector('.cabinet-carousel-btn--prev').addEventListener('click', () => { goTo(current - 1); resetTimer() })
+  carousel.querySelector('.cabinet-carousel-btn--next').addEventListener('click', () => { goTo(current + 1); resetTimer() })
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i + 1); resetTimer() }))
+
+  // Touch/swipe support
+  let touchStartX = 0
+  carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX }, { passive: true })
+  carousel.addEventListener('touchend',   e => {
+    const diff = touchStartX - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetTimer() }
+  }, { passive: true })
+
+  function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 5000) }
+  resetTimer()
+
+  // Chrome/Edge sometimes drop the GPU layer of transformed elements while the
+  // tab is backgrounded, leaving images black on return — force a repaint.
+  const allSlideImgs = carousel.querySelectorAll('img')
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return
+    allSlideImgs.forEach((img) => {
+      img.style.display = 'none'
+      void img.offsetHeight
+      img.style.display = ''
+    })
+  })
+})()
+
 // ── Collab card accordion — click anywhere on card
 document.querySelectorAll('.collab-card').forEach(card => {
   if (!card.querySelector('.collab-toggle')) return
