@@ -171,16 +171,30 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 5000) }
   resetTimer()
 
-  // Chrome/Edge sometimes drop the GPU layer of transformed elements while the
-  // tab is backgrounded, leaving images black on return — force a repaint.
-  const allSlideImgs = carousel.querySelectorAll('img')
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState !== 'visible') return
-    allSlideImgs.forEach((img) => {
+  // Mobile/desktop browsers sometimes drop the GPU layer of transformed elements
+  // while the tab/app is backgrounded, leaving images black on return — force a repaint.
+  function forceRepaint() {
+    carousel.querySelectorAll('img').forEach((img) => {
       img.style.display = 'none'
       void img.offsetHeight
       img.style.display = ''
     })
+    const prevTransition = track.style.transition
+    track.style.transition = 'none'
+    render()
+    void track.offsetHeight
+    track.style.transition = prevTransition
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return
+    forceRepaint()
+    setTimeout(forceRepaint, 150) // some mobile browsers restore the layer late
+  })
+
+  // Back/forward-cache restores (e.g. returning via the browser's back button)
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) forceRepaint()
   })
 })()
 

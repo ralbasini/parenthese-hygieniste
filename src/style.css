@@ -885,7 +885,7 @@
     border-radius: 1rem;
     width: 480px; /* fallback until JS sizes it to the current photo's ratio */
     max-width: 100%;
-    aspect-ratio: 3 / 4; /* fallback ratio */
+    aspect-ratio: 3 / 2; /* fallback ratio — first slide is landscape */
     margin: 2.5rem auto 0;
     background: #1a1a1a;
     transition: width 0.4s ease, height 0.4s ease;
