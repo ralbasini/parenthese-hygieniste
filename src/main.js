@@ -169,7 +169,17 @@ mobileMenu.querySelectorAll('a').forEach((a) => {
   }, { passive: true })
 
   function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 5000) }
-  resetTimer()
+
+  // Only start auto-advancing once the carousel has scrolled into view for the first time
+  const autoplayObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        resetTimer()
+        autoplayObserver.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.2 })
+  autoplayObserver.observe(carousel)
 
   // Mobile/desktop browsers sometimes drop the GPU layer of transformed elements
   // while the tab/app is backgrounded, leaving images black on return — force a repaint.
